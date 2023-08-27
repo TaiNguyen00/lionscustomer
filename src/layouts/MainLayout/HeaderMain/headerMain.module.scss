@@ -1,0 +1,19 @@
+@use "~/scss/" as *;
+/*
+1/ demo reponsive 
+note : 1/layout moblile code trước r tới tablet - pc 
+       2/ Code rõ ràng rành mạch code đừng code ngu
+       3/ Ưu tiên phân bố cục lớn bằng grid layouts
+*/
+.header {
+  color: red;
+  @include tablet {
+    color: pink;
+  }
+  @include pc {
+    color: blue;
+  }
+}
+.border {
+  border: 1px solid black;
+}
