@@ -1,0 +1,240 @@
+@use "~/scss/" as *;
+$from_color: #0065FD;
+
+.body {
+
+    background-image: url('../../../assets/images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    @include tablet {}
+
+    @include pc {}
+}
+
+.children {
+    background-color: white;
+    width: 80%;
+    height: auto;
+    border-radius: 5px;
+
+    @include tablet {
+        height: 90%;
+    }
+
+    @include pc {
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        right: 0;
+    }
+}
+
+.text {
+    text-align: center;
+    padding: 20px 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 50px;
+
+
+}
+
+.h4 {
+    text-align: center;
+    padding: 3px 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: lighter;
+
+
+
+}
+
+.from {
+    width: 100%;
+    height: auto;
+}
+
+.from_div {
+    position: relative;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.box {
+    min-height: 83px;
+}
+
+.input {
+    border: 1px solid black;
+    border-radius: 4px;
+    width: 80%;
+    height: 50px;
+    padding: 0 20px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.25s ease;
+
+    &:focus {
+        border-color: #000000;
+    }
+
+    &:focus+.label {
+        top: 0;
+        left: 45px;
+        padding: 10px;
+        display: inline-block;
+        background-color: white;
+        color: $from_color;
+        border-color: $from_color;
+    }
+
+    &:not(:placeholder-shown)+.label {
+        top: 0;
+        left: 45px;
+        padding: 8px;
+        display: inline-block;
+        background-color: white;
+        color: $from_color;
+        border-color: $from_color;
+
+    }
+
+    @include tablet {
+        &:focus+.label {
+            left: 75px;
+        }
+
+        &:not(:placeholder-shown)+.label {
+            left: 75px;
+        }
+    }
+
+    @include pc {
+        &:focus+.label {
+            left: 85px;
+        }
+
+        &:not(:placeholder-shown)+.label {
+            left: 85px;
+        }
+    }
+}
+
+
+
+
+.label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 55px;
+    user-select: none;
+    color: #999;
+    pointer-events: none;
+    transition: 0.3s ease;
+
+    @include tablet {
+        left: 85px;
+        color: black;
+    }
+
+    @include pc {
+        left: 95px;
+        color: #000000;
+    }
+}
+
+.message {
+    color: red;
+    padding: 7px 0 10px 0;
+    margin-left: 35px;
+
+    @include tablet {
+        margin-left: 60px;
+    }
+
+    @include pc {
+        margin-left: 80px;
+        color: red;
+    }
+}
+
+.qmk {}
+
+.qmk a {
+    color: $from_color;
+    padding: 4px 0;
+    margin-left: 35px;
+    text-decoration: none;
+    font-size: 12px;
+
+    @include tablet {
+        margin-left: 65px;
+        color: blue;
+    }
+
+    @include pc {
+        margin-left: 85px;
+        color: blue;
+    }
+}
+
+.button_ground {
+    width: 100%;
+    height: auto;
+    display: flex;
+    padding: 14px 0;
+}
+
+.button {
+    margin: 0 auto;
+    background-color: #0065FD;
+    width: 80%;
+    height: 40px;
+    border: none;
+    border-radius: 2px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+}
+
+.button_daf {
+    margin: 0 auto;
+    width: 80%;
+    height: 40px;
+    border-radius: 2px;
+    font-weight: 600;
+    position: relative;
+
+}
+
+.button_daf_img {
+    width: 30px;
+    height: auto;
+    left: 20px;
+    top: 12px;
+    position: absolute;
+
+}
+
+.register {
+    padding: 30px 0;
+    text-align: center;
+    font-weight: 500;
+    color: #5f5c5c;
+}
+
+.register a {
+    text-decoration: none;
+    color: blue;
+}
