@@ -1,0 +1,250 @@
+// registration-form
+$pc-width: 769px;
+$tablet-width: 481px;
+$mobile-width:576px;
+$primary-color: #007bff;
+$error-color: red;
+
+.Register {
+  text-align: center;
+  margin-top: 5rem;
+  form{
+    display: inline-block;
+    padding: 2rem; 
+    // border: 1px solid #ccc;
+    border-radius: 5px;
+ 
+    .h1{
+        margin-bottom: 2rem ;
+    }
+
+  .form-group {
+    position: relative;
+   margin-bottom: 1rem;
+   display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  label {
+     display: block;
+     margin-bottom: 0.5rem;
+   }
+
+   input {
+     
+     width: 39.625rem;
+     max-width: 100%;
+     padding: 0.5rem;
+     font-size: 1rem;
+     border: 2px solid #000;
+     border-radius: 3px;
+     
+
+   }
+   .toggle-password {
+     position: absolute;
+     right: 1rem;
+     top: 50%;
+     transform: translateY(-50%);
+     cursor: pointer;
+     font-size: 0.75rem;
+     color: #000;
+   }
+
+  
+ } 
+ .error {
+     display: flex;
+     justify-content: flex-start;
+     color: $error-color;
+     font-size: 0.75rem;
+     margin-top: 0.25rem;
+     margin-left: 0rem;
+   }
+
+ button {
+   padding: 0.5rem 1rem;
+   font-size: 1rem;
+   background-color: $primary-color;
+   color: #fff;
+   border: none;
+   border-radius: 3px;
+   width: 39.625rem;
+   max-width: 100%;
+   cursor: pointer;
+   
+ }
+ p{
+      
+    font-family:'Roboto', sans-serif ;
+    font-weight : normal !important;;
+    padding: 0.25rem;
+    margin-top: 0.25rem;
+    .content_login{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+     }
+  a{
+      text-decoration: none;
+  }
+}
+  }
+ 
+  @media (max-width: $mobile-width) {
+    // Kiểu dáng cho màn hình nhỏ
+    font-size: 0.8rem;
+    .content_login{
+        justify-content: center;
+        align-items: center;
+     }
+  
+     form {
+    display: inline-block;
+    padding: 2rem; 
+    // border: 1px solid #ccc;
+    border-radius: 5px;
+    .h1{
+       
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+    .form-group {
+       position: relative;
+      margin-bottom: 1rem;
+      display: flex;
+     align-items: center;
+     justify-content: flex-start;
+
+     label {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      input {
+        
+        width: 39.625rem;
+        max-width: 100%;
+        padding: 0.5rem;
+        font-size: 1rem;
+        border: 2px solid #000;
+        border-radius: 3px;
+        
+   
+      }
+      .toggle_password {
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        font-size: 0.75rem;
+        color: #000;
+      }
+
+     
+    } 
+    .error {
+        display: flex;
+        justify-content: flex-start;
+        color: $error-color;
+        font-size: 0.75rem;
+        margin-top: 0.25rem;
+        margin-left: 0rem;
+      }
+
+    button {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      background-color: $primary-color;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      width: 39.625rem;
+      max-width: 100%;
+      cursor: pointer;
+      
+    }
+  }
+  @media (max-width: $tablet-width) {
+    // Kiểu dáng cho màn hình nhỏ
+    font-size: 0.8rem;
+    .form-group {
+        position: relative;
+       margin-bottom: 1rem;
+       display: flex;
+      align-items: center;
+      justify-content: flex-start;
+ 
+      label {
+         display: block;
+         margin-bottom: 0.5rem;
+       }
+ 
+       input {
+         
+         width: 39.625rem;
+         max-width: 100%;
+         padding: 0.5rem;
+         font-size: 1rem;
+         border: 2px solid #000;
+         border-radius: 3px;
+         
+    
+       }
+       .toggle-password {
+         position: absolute;
+         right: 1rem;
+         top: 50%;
+         transform: translateY(-50%);
+         cursor: pointer;
+         font-size: 0.75rem;
+         color: #000;
+       }
+ 
+      
+     } 
+     .error {
+         display: flex;
+         justify-content: flex-start;
+         color: $error-color;
+         font-size: 0.75rem;
+         margin-top: 0.25rem;
+         margin-bottom: 0.25rem;
+         margin-left: 0rem;
+       }
+ 
+     button {
+       padding: 0.5rem 1rem;
+       font-size: 1rem;
+       background-color: $primary-color;
+       color: #fff;
+       border: none;
+       border-radius: 3px;
+       width: 39.625rem;
+       max-width: 100%;
+       cursor: pointer;
+       
+     }
+     .content_login{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+     }
+  }
+  @media (max-width: $pc-width) {
+    // Kiểu dáng cho màn hình trung bình
+    font-size: 1rem;
+    .content_login{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+     }
+  
+  }
+  }
+}
+ 
+
