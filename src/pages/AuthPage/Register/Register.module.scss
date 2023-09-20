@@ -1,0 +1,106 @@
+
+$primary-color:  #007bff;
+$error-color: red;
+
+   
+   .register-form {
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    .h2{
+        font-size:36px !important ;
+        margin: 0.7rem;
+    }
+  .form-group {
+ 
+    
+        position: relative;
+       margin-bottom: 1rem;
+       display: flex;
+      align-items: center;
+      justify-content: center;
+     input{
+    max-width: 100%;
+    padding: 0.8rem 1rem;
+    margin: 0.4rem;
+    }
+     .toggle-password {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      font-size: 0.75rem;
+      color: #ccc;
+    }
+    /* Thiết lập các kiểu cho button */
+     .submit_register {
+      background-color: $primary-color;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    /* Thiết lập các kiểu cho input[type="submit"] */
+    input[type="submit"]
+  { 
+      width: 100%;
+      padding: 10px 5px;
+      border: 1px solid $primary-color; /* Sử dụng màu tương tự với background button */
+      border-radius: 5px;
+      background-color: $primary-color;
+      color: #fff;
+      cursor: pointer;
+    }
+   
+    input[type="text"] ,input[type="email"],input[type="password"]{
+      flex: 1; /* Cho phép input mở rộng để lấp đầy khoảng trống còn lại */
+      padding: 10px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+    }
+   
+  }
+  .error {
+    display: flex;
+    justify-content: flex-start;
+    color:$error-color;
+    font-size: 0.75rem;
+    margin-top: 0rem;
+    margin-left: 0.8rem;
+    font-family: "Inter", sans-serif;
+  }
+ 
+  
+ 
+  .fuilt_register{
+    font-family: "Inter", sans-serif;
+
+     a{
+       text-decoration: none;
+       color: $primary-color;
+     }
+  }
+  
+  
+  input[type="submit"]:hover {
+    background-color: #0056b3;
+    border: 1px solid #0056b3;
+  }
+  
+  
+
+  
+
+  }
+  
+  /* Thiết lập các kiểu cho màn hình có chiều rộng từ 768px trở lên (tablet và PC) */
+  @media (min-width: 768px) {
+    .register-form {
+      max-width: 550px;
+      padding: 40px;
+    }
+  }
+  
+  /* Thiết lập các kiểu cho input và button*/
+ 
