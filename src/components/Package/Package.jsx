@@ -13,7 +13,8 @@ const Package = () => {
             limit: [
                 'Quan li doanh thu',
                 'Quan li doanh thu',
-            ]
+            ],
+            button: 'Dùng thử'
         },
         {
             title: 'Vip',
@@ -23,7 +24,9 @@ const Package = () => {
             limit: [
                 'Quan li khách hàng',
                 'Hỗ trợ tương tác',
-            ]
+            ],
+            button: 'Mua',
+            modesee: 'Xem thêm'
         },
         {
             title: 'Vip Pro',
@@ -33,7 +36,9 @@ const Package = () => {
             limit: [
                 'Quan li khách hàng',
                 'Hỗ trợ tương tác',
-            ]
+            ],
+            button: 'Mua',
+            modesee: 'Xem thêm'
         },
     ]
     return (

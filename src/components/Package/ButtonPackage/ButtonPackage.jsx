@@ -7,11 +7,11 @@ const ButtonPackage = ({ Packages }) => {
     return (
         <div className={clsx(style.button_package)}>
             {Packages.btn ? (
-                <Button className={clsx(style.button_free)}>Dùng thử</Button>
+                <Button className={clsx(style.button_free)}>{Packages.button}</Button>
             ) : (
                 <div className={clsx(style.button_group)}>
-                    <Button className={clsx(style.button_buy)}>Mua</Button>
-                    <Button className={clsx(style.button_seemode)}>Xem thêm</Button>
+                    <Button className={clsx(style.button_buy)}>{Packages.button}</Button>
+                    <Button className={clsx(style.button_seemode)}>{Packages.modesee}</Button>
                 </div>
             )}
         </div>
