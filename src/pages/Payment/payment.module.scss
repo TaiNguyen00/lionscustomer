@@ -1,0 +1,143 @@
+@use "~/scss/" as *;
+$maincolor: #F4F9F9;
+$bluecolor: #195B97;
+$border: #D9D9D9;
+
+.container {
+    background-color: $maincolor;
+}
+
+.header {
+    width: 100%;
+    height: 70px;
+    background-color: $bluecolor;
+}
+
+.detailPayment {
+    width: 95%;
+    margin: 10px auto;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 0.7fr 1.3fr;
+    grid-template-rows: 1fr;
+    gap: 10px;
+}
+
+.inforUser,
+.detail {
+    border: 1px solid $border;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.inforPayment {
+    border: 1px solid $border;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.pay {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.step1,
+.step2 {
+    padding: 20px;
+}
+
+.step1 {
+    border-right: 1px solid black;
+    margin: 0 10px;
+}
+
+
+
+.step1>h1 {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.step1>h1>a {
+    color: black;
+    margin-left: 10px;
+}
+
+p>span {
+    color: red;
+}
+
+.step1>h2,
+.step2>h2 {
+    background-color: $bluecolor;
+    padding: 5px;
+    text-align: center;
+}
+
+.step2>.image {
+    display: grid;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.step2>.image>img:last-child {
+    margin: 10px auto;
+}
+
+.button {
+    text-align: center;
+}
+
+input[type="button"] {
+    color: $bluecolor;
+    font-weight: bold;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.step1 h4,
+.step2 h4 {
+    color: $bluecolor;
+    margin-bottom: 10px;
+}
+
+.ab {
+    display: flex;
+}
+
+.a {
+    margin: 10px;
+}
+
+.b {
+    margin: 10px;
+    font-size: 19px;
+}
+
+.b p:last-child {
+    font-weight: bold;
+}
+
+.detail>table,
+tr,
+td {
+    margin: 0 auto;
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+
+table>tr>td {
+    padding: 10px;
+    text-align: center;
+    width: 33.33%;
+}
+
+table>tr:first-child {
+    background-color: $bluecolor;
+}

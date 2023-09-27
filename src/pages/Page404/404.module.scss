@@ -1,6 +1,16 @@
-img {
+@use "~/scss/" as *;
+
+.image {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    @include mobile {
+        width: 350px;
+    }
+
+    @include tablet {
+        width: 500px;
+    }
 }

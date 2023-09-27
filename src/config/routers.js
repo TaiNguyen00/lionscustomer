@@ -4,6 +4,8 @@ import Mainlayout from "~/layouts/MainLayout";
 // import Page404 from "~/pages/AuthPage/404";
 import { LoginPage, RegisterPage } from "~/pages/AuthPage";
 import { Page404 } from "~/pages";
+import { Invoice } from "~/pages";
+import { Payment } from "~/pages";
 const routers = [
   {
     id: 0,
@@ -24,6 +26,16 @@ const routers = [
     id: 3,
     path: "*",
     component: Page404,
+  },
+  {
+    id: 4,
+    path: "/invoice",
+    component: Invoice,
+  },
+  {
+    id: 5,
+    path: "/payment",
+    component: Payment,
   },
 ];
 export default routers;
