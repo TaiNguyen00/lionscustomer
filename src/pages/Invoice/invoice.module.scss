@@ -31,18 +31,19 @@ $bluecolor: #195B97;
 .inforUser {
     display: flex;
     justify-content: center;
+
 }
 
-.a {
+.infor {
     margin: 10px;
 }
 
-.b {
+.user {
     margin: 10px;
     font-size: 19px;
 }
 
-.b p:last-child {
+.user p:last-child {
     font-weight: bold;
 }
 
@@ -54,6 +55,14 @@ td {
     border: 1px solid black;
     border-collapse: collapse;
     width: 50%;
+
+    @include tablet {
+        width: 90%;
+    }
+
+    @include pc {
+        width: 50%;
+    }
 }
 
 
@@ -86,29 +95,57 @@ table>tr:first-child {
     justify-content: center;
     width: 50%;
     margin: 30px 0;
+
+    @include tablet {
+        width: 100%;
+    }
+
+    @include pc {
+        display: flex;
+        justify-content: left;
+    }
 }
 
-.pttt {
+.methods {
     display: flex;
     flex-direction: column;
     margin-right: 50px;
 }
 
 
-.pttt h3 {
+.methods h3 {
     text-align: center;
 }
 
-.pttt a img {
+.methods a img {
     height: 60px;
+
+    @include tablet {
+        height: 45px;
+    }
+
+    @include pc {
+        height: 60px;
+    }
+
 }
 
-.pttt a img:hover {
+.methods a img:hover {
     border: 3px solid red;
 }
 
 .click {
     display: flex;
+
+    @include tablet {
+        display: flex;
+        flex-direction: column;
+    }
+
+    @include pc {
+        display: flex;
+        flex-direction: row;
+    }
 }
 
 .click p {

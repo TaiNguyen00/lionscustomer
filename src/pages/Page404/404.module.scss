@@ -6,11 +6,11 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
-    @include mobile {
+    @include tablet {
         width: 350px;
     }
 
-    @include tablet {
+    @include pc {
         width: 500px;
     }
 }

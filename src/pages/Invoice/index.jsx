@@ -7,6 +7,12 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Invoice = () => {
+  const users = [
+    {
+      name: "Nguyễn Văn A",
+      clientCode: "A1234"
+    }
+  ]
   const [methods, setMethods] = useState("");
   const handleMethods1 = (event) => {
     event.preventDefault();
@@ -31,29 +37,34 @@ const Invoice = () => {
       </div>
 
       <div className={clsx(styles.inforUser)}>
-        <div className={clsx(styles.a)}>
+        <div className={clsx(styles.infor)}>
           <h3>Tên:</h3>
           <h3>Mã khách hàng:</h3>
           <h3>Tổng tiền thanh toán:</h3>
         </div>
-        <div className={clsx(styles.b)}>
-          <p>Nguyễn Văn A</p>
-          <p>A1234</p>
-          <p>5.000.000vnđ</p>
-        </div>
+        {users.map((user) => {
+          console.log(user.name);
+          return (
+            <div className={clsx(styles.user)} key={user.clientCode}>
+              <p>{user.name}</p>
+              <p>{user.clientCode}</p>
+              <p>5.000.000vnđ</p>
+            </div>
+          );
+        })}
       </div>
 
       <table>
         <tr>
           <td>Gói</td>
           <td>Số tiền</td>
-          <td>Chọn</td>
+
 
         </tr>
         <tr>
           <td>VIP</td>
           <td>5.000.000đ</td>
-          <td><input type="checkbox" /></td>
+
 
         </tr>
 
@@ -68,14 +79,13 @@ const Invoice = () => {
         <p>Bước 1: Chọn kênh thanh toán:</p>
 
         <div className={clsx(styles.step1)}>
-
-          <div className={clsx(styles.pttt)}>
+          <div className={clsx(styles.methods)}>
             <a href="" onClick={handleMethods1}>
               <img src={momo} alt="" />
             </a>
             <h3>Momo</h3>
           </div>
-          <div className={clsx(styles.pttt)}>
+          <div className={clsx(styles.methods)}>
             <a href="" onClick={handleMethods2}>
               <img src={bank} alt="" />
             </a>
@@ -98,7 +108,7 @@ const Invoice = () => {
 
       </div>
 
-    </div>
+    </div >
   )
 };
 

@@ -19,17 +19,49 @@ $border: #D9D9D9;
 }
 
 .row {
-    display: grid;
-    grid-template-columns: 0.7fr 1.3fr;
-    grid-template-rows: 1fr;
-    gap: 10px;
+    @include tablet {
+        display: flex;
+        flex-direction: column;
+    }
+
+    @include pc {
+        display: flex;
+        flex-direction: row;
+    }
 }
 
-.inforUser,
+.inforUser {
+    border: 1px solid $border;
+    border-radius: 5px;
+    padding: 10px;
+
+    @include tablet {
+        width: 80%;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+
+    @include pc {
+        width: 30%;
+        margin-right: 10px;
+        margin-bottom: 0;
+    }
+
+}
+
 .detail {
     border: 1px solid $border;
     border-radius: 5px;
     padding: 10px;
+
+    @include tablet {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    @include pc {
+        width: 70%;
+    }
 }
 
 .inforPayment {
@@ -40,8 +72,16 @@ $border: #D9D9D9;
 }
 
 .pay {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    @include tablet {
+        display: grid;
+        grid-template-rows: 0.5fr 0.5fr;
+    }
+
+    @include pc {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
 }
 
 .step1,
@@ -50,8 +90,25 @@ $border: #D9D9D9;
 }
 
 .step1 {
-    border-right: 1px solid black;
-    margin: 0 10px;
+    @include tablet {
+        border-right: none;
+    }
+
+    @include pc {
+        grid-column: 1/2;
+        border-right: 1px solid black;
+
+    }
+}
+
+.step2 {
+    @include tablet {
+        border-right: none;
+    }
+
+    @include pc {
+        grid-column: 2/3;
+    }
 }
 
 
@@ -105,20 +162,20 @@ input[type="button"] {
     margin-bottom: 10px;
 }
 
-.ab {
+.inforuser {
     display: flex;
 }
 
-.a {
+.infor {
     margin: 10px;
 }
 
-.b {
+.user {
     margin: 10px;
     font-size: 19px;
 }
 
-.b p:last-child {
+.user p:last-child {
     font-weight: bold;
 }
 
