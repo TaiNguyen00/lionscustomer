@@ -1,49 +1,127 @@
 @use "~/scss/" as *;
 
+
 .container {
-    height: 755px;
+    display: none;
+
+    @include tablet {}
+
+    @include pc {
+        min-height: 755px;
+        background-color: #CCF2F4;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+        align-items: center;
+        padding: 0 10px;
+    }
+}
+
+// fig cung wight
+.container_mobie {
+    display: block;
+    min-width: 430px;
+    min-height: 650px;
     background-color: #CCF2F4;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 40px;
-    align-items: center;
     padding: 0 10px;
+    display: flex;
+    align-items: center;
+
+    @include tablet {}
+
+    @include pc {
+        display: none;
+    }
 }
 
 .package {
-    height: 530px;
-    border-radius: 30px;
+    min-width: 350px;
+    min-height: 530px;
     background: #FFFFFF;
     position: relative;
     border-radius: 30px;
+
+    @include tablet {}
+
+    @include pc {
+        min-height: 530px;
+        background: #FFFFFF;
+        position: relative;
+        border-radius: 30px;
+    }
 }
 
+
+
 .title {
+
     text-align: center;
     padding: 30px 0 10px 0;
     font-weight: 700;
     color: #008E6F;
+
+    @include tablet {}
+
+    @include pc {
+        text-align: center;
+        padding: 30px 0 10px 0;
+        font-weight: 700;
+        color: #008E6F;
+    }
 }
 
 .package_info {
+
     padding: 0 70px;
+
+    @include tablet {}
+
+    @include pc {
+        padding: 0 70px;
+    }
 }
 
 .package_info_text {
     text-decoration: solid;
     margin-bottom: 5px;
+
+    @include tablet {}
+
+
+
+    @include pc {
+        text-decoration: solid;
+        margin-bottom: 5px;
+    }
 }
 
 .package_limit {
+
     margin-top: 5px;
     list-style: none;
     text-decoration: line-through;
+
+    @include tablet {}
+
+    @include pc {
+        margin-top: 5px;
+        list-style: none;
+        text-decoration: line-through;
+    }
 }
 
 // button package
 .button_package {
+
     display: flex;
     justify-content: center;
+
+    @include tablet {}
+
+    @include pc {
+        display: flex;
+        justify-content: center;
+    }
 }
 
 .button_free {
@@ -57,17 +135,44 @@
     background-color: #A4EBF3;
     position: absolute;
     bottom: 50px;
+
+    @include tablet {}
+
+    @include pc {
+        min-height: 40px;
+        min-width: 170px;
+        font-size: 17px;
+        font-weight: 700;
+        font-family: Arial, Helvetica, sans-serif;
+        border-radius: 20px;
+        border: 2.5px solid #195B97;
+        background-color: #A4EBF3;
+        position: absolute;
+        bottom: 50px;
+    }
 }
 
 .button_group {
+
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     position: absolute;
     bottom: 50px;
+
+    @include tablet {}
+
+    @include pc {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        position: absolute;
+        bottom: 50px;
+    }
 }
 
 .button_buy {
+
     min-height: 40px;
     min-width: 140px;
     font-size: 17px;
@@ -77,6 +182,20 @@
     color: white;
     border: 2.5 solid #7C9D96;
     background-color: #195B97;
+
+    @include tablet {}
+
+    @include pc {
+        min-height: 40px;
+        min-width: 140px;
+        font-size: 17px;
+        font-weight: 700;
+        font-family: Arial, Helvetica, sans-serif;
+        border-radius: 20px;
+        color: white;
+        border: 2.5 solid #7C9D96;
+        background-color: #195B97;
+    }
 }
 
 .button_seemode {
@@ -89,4 +208,18 @@
     color: white;
     border: 2.5px solid #7C9D96;
     background-color: #008E6F;
+
+    @include tablet {}
+
+    @include pc {
+        min-height: 40px;
+        min-width: 140px;
+        font-size: 17px;
+        font-weight: 700;
+        font-family: Arial, Helvetica, sans-serif;
+        border-radius: 20px;
+        color: white;
+        border: 2.5px solid #7C9D96;
+        background-color: #008E6F;
+    }
 }
