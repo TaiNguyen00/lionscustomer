@@ -8,72 +8,84 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
 const Package = () => {
-    const Packages = [
+
+    const Packager = [
         {
-            title: 'Dùng thử',
-            quantityRoom: 8,
-            quantityStaff: 2,
-            btn: true,
-            limit: [
-                'Quan li doanh thu',
-                'Quan li doanh thu',
+            // title gói
+            id: 0,
+            title: "Dùng thử",
+            imgUrlPakage: "imgsUrl",
+            button: 'Dùng thử',
+
+            options: [
+                {
+                    id: 0,
+                    titleOption: "Quản lý đơn đặt phòng.",
+                    descOption: {
+                        label: "Số lượng phòng quản lý của gói này là",
+                        quantityRoom: 8,
+                    },
+                },
+                {
+                    id: 0,
+                    titleOption: "Quản lý nhân sự .",
+                    descOption: {
+                        label: "Số lượng nhân viên quản lý của gói này là",
+                        quantityRoom: 3,
+                    },
+                },
             ],
-            button: 'Dùng thử'
+            isFreeBtn: true, // Đặt giá trị boolean ở đây, ví dụ: true
         },
+
         {
-            title: 'Vip',
-            quantityRoom: 15,
-            quantityStaff: 3,
-            btn: false,
-            limit: [
-                'Quan li khách hàng',
-                'Hỗ trợ tương tác',
-            ],
+            // title gói
+            id: 1,
+            title: "Vip",
+            imgUrlPakage: "imgsUrl",
             button: 'Mua',
-            modesee: 'Xem thêm'
-        },
-        {
-            title: 'Vip Pro',
-            quantityRoom: 30,
-            quantityStaff: 5,
-            btn: false,
-            limit: [
-                'Quan li khách hàng',
-                'Hỗ trợ tương tác',
+            modesee: 'Xem thêm',
+            options: [
+                {
+                    id: 0,
+                    titleOption: "Quản lý đơn đặt phòng.",
+                    descOption: {
+                        label: "Số lượng phòng quản lý của gói này là",
+                        quantityRoom: 8,
+                    },
+                },
             ],
-            button: 'Mua',
-            modesee: 'Xem thêm'
+            isFreeBtn: false, // Đặt giá trị boolean ở đây, ví dụ: true
+
+            // Đặt giá trị boolean ở đây, ví dụ: true
         },
-    ]
+    ];
+
     return (
         <>
-            {/* danh cho pc  */}
+            {/* danh cho pc */}
             <div className={clsx(style.container)}>
-                {Packages.map((pk, inx) => (
+                {Packager.map((pk, inx) => (
                     <div key={inx} className={clsx(style.package)}>
                         <h1 className={clsx(style.title)}>{pk.title}</h1>
-                        <div className={clsx(style.package_info)}>
-                            <span>Quản lí đơn đặt phòng</span>
-                            <li className={clsx(style.package_info_text)}>
-                                Tối đa {pk.quantityRoom} phòng
-                            </li>
-                            <span>Quản lí nhân viên</span>
-                            <li className={clsx(style.package_info_text)}>
-                                Tối đa {pk.quantityStaff} nhân viên
-                            </li>
-                            {pk.limit ? (
-                                pk.limit.map((item, index) => (
-                                    <li className={clsx(style.package_limit)} key={index}>{item}</li>
-                                ))
-                            ) : null}
-                        </div>
-                        <ButtonPackage Packages={pk} />
+                        {pk.options ? (
+                            pk.options.map((item, index) => ( // Thay đổi 'limit' thành 'options'
+                                <div className={clsx(style.package_info)} key={index}>
+                                    <span>{item.titleOption}</span>
+                                    <li className={clsx(style.package_info_text)}>
+                                        {item.descOption.label} {item.descOption.quantityRoom}
+                                    </li>
+                                    {/* Tiếp tục thêm các mục khác ở đây nếu cần */}
+                                </div>
+                            ))
+                        ) : null}
+                        <ButtonPackage Packager={pk} />
                     </div>
                 ))}
             </div>
             {/* ket thuc */}
 
-            {/* danh cho mobie  */}
+            {/* danh cho mobie */}
             <div className={clsx(style.container_mobie)}>
                 <Swiper className={clsx(style.swiperr)}
                     spaceBetween={50}
@@ -81,28 +93,22 @@ const Package = () => {
                     onSlideChange={() => console.log('slide change')}
                     onSwiper={(swiper) => console.log(swiper)}
                 >
-                    {Packages.map((pk, inx) => (
+                    {Packager.map((pk, inx) => (
                         <SwiperSlide className={clsx(style.swiper)} key={inx}>
                             <div className={clsx(style.package)}>
                                 <h1 className={clsx(style.title)}>{pk.title}</h1>
-                                <div className={clsx(style.package_info)}>
-                                    <span>Quản lí đơn đặt phòng</span>
-                                    <li className={clsx(style.package_info_text)}>
-                                        Tối đa {pk.quantityRoom} phòng
-                                    </li>
-                                    <span>Quản lí nhân viên</span>
-                                    <li className={clsx(style.package_info_text)}>
-                                        Tối đa {pk.quantityStaff} nhân viên
-                                    </li>
-                                    {pk.limit ? (
-                                        pk.limit.map((item, index) => (
-                                            <li className={clsx(style.package_limit)} key={index}>
-                                                {item}
+                                {pk.options ? (
+                                    pk.options.map((item, index) => ( // Thay đổi 'limit' thành 'options'
+                                        <div className={clsx(style.package_info)} key={index}>
+                                            <span>{item.titleOption}</span>
+                                            <li className={clsx(style.package_info_text)}>
+                                                {item.descOption.label} {item.descOption.quantityRoom}
                                             </li>
-                                        ))
-                                    ) : null}
-                                </div>
-                                <ButtonPackage Packages={pk} />
+                                            {/* Tiếp tục thêm các mục khác ở đây nếu cần */}
+                                        </div>
+                                    ))
+                                ) : null}
+                                <ButtonPackage Packager={pk} />
                             </div>
                         </SwiperSlide>
                     ))}
