@@ -1,0 +1,133 @@
+@use "~/scss/" as *;
+
+
+
+.body {
+    display: none;
+
+    @include pc {
+        display: block;
+        min-height: 755px;
+        background-color: #CCF2F4;
+    }
+}
+
+.body_mobie {
+    display: block;
+    min-width: 430px;
+    min-height: 400px;
+    background-color: #CCF2F4;
+
+    @include pc {
+        display: none;
+    }
+}
+
+.container {
+
+    @include tablet {}
+
+    @include pc {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+        align-items: center;
+        padding: 0 10px;
+    }
+}
+
+.container_mobie {
+    background-color: rgb(244, 164, 16);
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    @include tablet {}
+
+    @include pc {}
+}
+
+.functional {
+    min-width: 350px;
+    min-height: 250px;
+    background: #FFFFFF;
+    position: relative;
+    border-radius: 30px;
+
+    @include tablet {}
+
+    @include pc {
+        min-height: 250px;
+        background: #FFFFFF;
+        position: relative;
+        border-radius: 30px;
+    }
+}
+
+.title_body {
+
+    text-align: center;
+    font-weight: 700;
+
+    color: #191717;
+    padding: 20px 0 10px 0;
+
+    @include tablet {}
+
+    @include pc {
+        text-align: center;
+        font-weight: 700;
+        font-size: 40px;
+        padding: 45px 0 30px 0;
+        color: #191717;
+    }
+}
+
+.title {
+
+    text-align: center;
+    padding: 20px 0 10px 0;
+    font-weight: 700;
+    color: black;
+    font-size: 20px;
+
+    @include tablet {}
+
+    @include pc {
+        text-align: center;
+        padding: 20px 0 20px 0;
+        font-weight: 700;
+        color: black;
+        font-size: 20px;
+    }
+}
+
+.functional_text {
+    max-width: 290px;
+    height: auto;
+    margin: 0 auto;
+    color: #777777;
+
+    @include pc {
+        max-width: 290px;
+        height: auto;
+        margin: 0 auto;
+        color: #777777;
+
+    }
+}
+
+.text {
+    word-wrap: break-word;
+    text-align: justify;
+    font-size: 15px;
+    font-weight: 600;
+
+    @include pc {
+        word-wrap: break-word;
+        text-align: justify;
+        font-size: 15px;
+        font-weight: 600;
+    }
+}
