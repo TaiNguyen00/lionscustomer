@@ -2,14 +2,24 @@ import { clsx } from 'clsx';
 import styles from './payment.module.scss';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 // import momo from '../../../assets/images/momo.png';
-import bank from '../../assets/images/bank.png';
-import QR from '../../assets/images/7.png'
+import bank from '~/assets/images/bank.png';
+import QR from '~/assets/images/7.png'
 
 const Payment = () => {
+  const number = 5000000;
+  const formatNumber = () => {
+    const formatter = new Intl.NumberFormat('vi-VN', {
+      style: 'currency',
+      currency: 'VND',
+    });
+    const formattedNumber = formatter.format(number);
+
+    return formattedNumber;
+  }
   const users = [
     {
       name: "Nguyễn Văn A",
-      clientCode: "A1234"
+      clientCode: "A1234",
     }
   ]
   return (
@@ -33,7 +43,7 @@ const Payment = () => {
                     <div className={clsx(styles.user)} key={user.clientCode}>
                       <p>{user.name}</p>
                       <p>{user.clientCode}</p>
-                      <p>5.000.000vnđ</p>
+                      <p>{formatNumber()}</p>
                     </div>
                   );
                 })
@@ -53,7 +63,10 @@ const Payment = () => {
               </tr>
               <tr>
                 <td>1</td>
-                <td>5.000.000đ</td>
+                <td>{formatNumber(
+
+
+                )}</td>
                 <td>VIP</td>
 
               </tr>
