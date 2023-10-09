@@ -70,7 +70,7 @@ const Login = () => {
           </div>
 
           <div className={clsx(style.button_ground)}>
-            <button className={clsx(style.button)} type="submit">Dang nhâp</button>
+            <button className={clsx(style.button)} type="submit">Đăng nhập</button>
           </div>
         </form>
 

@@ -36,7 +36,7 @@
 
 .package {
     min-width: 350px;
-    min-height: 530px;
+    min-height: 566px;
     background: #FFFFFF;
     position: relative;
     border-radius: 30px;
@@ -44,21 +44,57 @@
     @include tablet {}
 
     @include pc {
-        min-height: 530px;
+        min-height: 566px;
         background: #FFFFFF;
         position: relative;
         border-radius: 30px;
     }
 }
 
+.package_interest {
+    width: 100%;
+    height: auto;
+    text-align: center;
 
+    .interest_price {
+        text-decoration: line-through;
+    }
+
+    span {
+        color: #FF0000;
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .sale {
+        width: 100px;
+        height: 20px;
+        margin: 0 auto;
+
+        h4 {
+
+            background-color: #FCBB3E;
+            color: white;
+            font-size: 14px;
+            padding: 2px 0;
+            text-align: center;
+            border-radius: 10px;
+        }
+    }
+
+
+}
 
 .title {
 
     text-align: center;
     padding: 30px 0 10px 0;
     font-weight: 700;
-    color: #008E6F;
+    color: #FCBB3E;
 
     @include tablet {}
 
@@ -66,49 +102,38 @@
         text-align: center;
         padding: 30px 0 10px 0;
         font-weight: 700;
-        color: #008E6F;
+        color: #FCBB3E;
     }
 }
+
 
 .package_info {
-
-    padding: 0 70px;
-
-    @include tablet {}
-
-    @include pc {
-        padding: 0 70px;
-    }
-}
-
-.package_info_text {
-    text-decoration: solid;
-    margin-bottom: 5px;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
 
     @include tablet {}
 
-
-
-    @include pc {
-        text-decoration: solid;
-        margin-bottom: 5px;
-    }
+    @include pc {}
 }
 
-.package_limit {
 
-    margin-top: 5px;
-    list-style: none;
-    text-decoration: line-through;
+
+.package_option {
+    width: 90%;
+    border-bottom: 1px solid blanchedalmond;
+    padding: 10px 0;
+
+    .option {
+        font-weight: 600;
+    }
 
     @include tablet {}
 
-    @include pc {
-        margin-top: 5px;
-        list-style: none;
-        text-decoration: line-through;
-    }
+    @include pc {}
 }
+
 
 // button package
 .button_package {
