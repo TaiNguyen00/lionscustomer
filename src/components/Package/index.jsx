@@ -1,5 +1,4 @@
 import clsx from 'clsx'
-import React from 'react'
 import style from './style.module.scss'
 import ButtonPackage from './Button/Button'
 import { Swiper, SwiperSlide } from 'swiper/react';
