@@ -4,7 +4,6 @@
 
 .body {
     display: none;
-
     @include pc {
         display: block;
         min-height: 755px;
@@ -24,9 +23,10 @@
 }
 
 .container {
-
+    
     @include tablet {}
-
+    width: $innerContent-width-pc;
+    margin: 0 auto;
     @include pc {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -37,7 +37,7 @@
 }
 
 .container_mobie {
-    background-color: rgb(244, 164, 16);
+   
     padding: 0 10px;
     display: flex;
     align-items: center;
