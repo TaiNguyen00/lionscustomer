@@ -124,42 +124,44 @@ const Package = () => {
     return (
         <>
             {/* danh cho pc */}
-            <div className={clsx(style.container)}>
-                {Packager.map((pk, inx) => (
-                    <div key={pk} className={clsx(style.package)}>
-                        <h1 className={clsx(style.title)}>{pk.title}</h1>
-                        {pk.interest ? (
-                            pk.interest.map((inr) => (
+            <div className={clsx(style.body)}>
+                <div className={clsx(style.container)}>
+                    {Packager.map((pk, inx) => (
+                        <div key={pk} className={clsx(style.package)}>
+                            <h1 className={clsx(style.title)}>{pk.title}</h1>
+                            {pk.interest ? (
+                                pk.interest.map((inr) => (
 
-                                <div className={clsx(style.package_interest)} key={inr.id}>
+                                    <div className={clsx(style.package_interest)} key={inr.id}>
 
-                                    <p className={clsx(style.interest_price)}>{new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(inr.price)}</p>
-                                    <p><span>{new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(inr.price - (inr.price * inr.sale / 100))}</span> / tháng</p>
-                                    <div className={clsx(style.sale)}>
-                                        <h4>Giảm {inr.sale}%</h4>
+                                        <p className={clsx(style.interest_price)}>{new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(inr.price)}</p>
+                                        <p><span>{new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(inr.price - (inr.price * inr.sale / 100))}</span> / tháng</p>
+                                        <div className={clsx(style.sale)}>
+                                            <h4>Giảm {inr.sale}%</h4>
+                                        </div>
                                     </div>
-                                </div>
-                            ))
+                                ))
 
-                        ) : null}
+                            ) : null}
 
 
-                        {pk.options ? (
-                            pk.options.map((item) => (
-                                <div className={clsx(style.package_info)} key={item.id}>
-                                    <div>
-                                        <CheckIcon className={clsx(style.package_check)} />
+                            {pk.options ? (
+                                pk.options.map((item) => (
+                                    <div className={clsx(style.package_info)} key={item.id}>
+                                        <div>
+                                            <CheckIcon className={clsx(style.package_check)} />
+                                        </div>
+                                        <div className={clsx(style.package_option)} >
+                                            <span>{item.titleOption}:
+                                                <span className={clsx(style.option)}>{item.propertiesOptions}</span></span>
+                                        </div>
                                     </div>
-                                    <div className={clsx(style.package_option)} >
-                                        <span>{item.titleOption}:
-                                            <span className={clsx(style.option)}>{item.propertiesOptions}</span></span>
-                                    </div>
-                                </div>
-                            ))
-                        ) : null}
-                        <ButtonPackage Packager={pk} />
-                    </div>
-                ))}
+                                ))
+                            ) : null}
+                            <ButtonPackage Packager={pk} />
+                        </div>
+                    ))}
+                </div>
             </div>
             {/* ket thuc */}
 

@@ -4,6 +4,7 @@
 
 .body {
     display: none;
+
     @include pc {
         display: block;
         min-height: 755px;
@@ -13,7 +14,7 @@
 
 .body_mobie {
     display: block;
-    min-width: 430px;
+    min-width: $innerContent-width-mobile ;
     min-height: 400px;
     background-color: #CCF2F4;
 
@@ -23,10 +24,12 @@
 }
 
 .container {
-    
+
     @include tablet {}
+
     width: $innerContent-width-pc;
     margin: 0 auto;
+
     @include pc {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -37,7 +40,7 @@
 }
 
 .container_mobie {
-   
+
     padding: 0 10px;
     display: flex;
     align-items: center;
@@ -49,7 +52,8 @@
 }
 
 .functional {
-    min-width: 350px;
+    width: 320px;
+    margin: 0 auto;
     min-height: 250px;
     background: #FFFFFF;
     position: relative;
@@ -58,6 +62,8 @@
     @include tablet {}
 
     @include pc {
+        min-width: 350px;
+
         min-height: 250px;
         background: #FFFFFF;
         position: relative;
@@ -68,7 +74,8 @@
 .title_body {
 
     text-align: center;
-    font-weight: 700;
+    font-weight: 600;
+    font-size: 28px;
 
     color: #191717;
     padding: 20px 0 10px 0;
