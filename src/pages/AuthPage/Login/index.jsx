@@ -4,29 +4,47 @@ import style from './login.module.scss'
 import img from '~/assets/images/Google-Symbol.jpg'
 import logo from '~/assets/images/LOGO-LIONS 1.png'
 import { useForm } from 'react-hook-form';
-import Inputs from './Input/Inputs';
+
 
 const Login = () => {
+  const [isSubmit, setIsSubmit] = useState(false)
+  console.log(isSubmit);
   const { register, formState: { errors }, handleSubmit, setError } = useForm();
   const user = [
     {
       email: 'trunghuu@gmail.com',
-      password: 12322222
+      password: "12322222"
     }
   ]
+
+
   const onSubmit = (data) => {
-    console.log(data);
+    const { email, password } = data;
+    console.log(email, password);
+    const userMatch = user.find((user) => user.email === email && user.password === password);
+    if (userMatch) {
+      // Đăng nhập thành công
+      console.log("Đăng nhập thành công");
+    } else {
+      // Hiển thị thông báo lỗi
+      setError('email', { message: 'Email hoặc mật khẩu không đúng' });
+    }
   }
+
   // Hàm xử lý sự kiện khi trường email thay đổi
   const handleEmailChange = (event) => {
     const emailValue = event.target.value;
     if (emailValue === '') {
-      setError('email', null);
+      setIsSubmit(false)
+      setError('email',
+        { message: 'khong duoc bo trong' }
+      );
     } else if (!emailValue.match(/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/i)) {
       setError('email', {
         message: 'Email không hợp lệ'
       });
     } else {
+      setIsSubmit(true)
       setError('email', null);
     }
   };
@@ -34,18 +52,21 @@ const Login = () => {
   // Hàm xử lý sự kiện khi trường password thay đổi
   const handlePasswordChange = (event) => {
     const passwordValue = event.target.value;
+    console.log(passwordValue);
     if (passwordValue === '') {
-      setError('password', null)
+      setIsSubmit(false)
+      setError('password',
+        { message: 'khong duoc bo trong' })
     }
     else if (passwordValue.length < 6 || passwordValue.length > 20) {
       setError('password', {
         message: 'Password phải từ 6 đến 20 ký tự'
       });
     } else {
+      setIsSubmit(true)
       setError('password', null);
     }
   };
-
 
 
   return (
@@ -61,7 +82,12 @@ const Login = () => {
             {/* Trường nhập email */}
             <div className={clsx(style.box)}>
               <div className={clsx(style.from_div)}>
-                <Inputs type='email' className='input' placeholder=' ' onChan={handleEmailChange} label='label' text='Email' />
+
+                <input type='email'{...register("email")} className={clsx(style.input)} placeholder=' ' onChange={handleEmailChange} />
+                <label className={clsx(style.label)}>Email</label>
+
+
+                {/* <Inputs type='email' className='input' placeholder=' ' onChan={handleEmailChange} label='label' text='Email' /> */}
               </div>
               {errors.email && <h5 className={clsx(style.message)}>{errors.email.message}</h5>}
             </div>
@@ -69,7 +95,12 @@ const Login = () => {
             {/* Trường nhập mật khẩu */}
             <div className={clsx(style.box)}>
               <div className={clsx(style.from_div)}>
-                <Inputs type='password' className='input' placeholder=' ' onChan={handlePasswordChange} label='label' text='Password' />
+
+                <input type='password'{...register("password")} className={clsx(style.input)} placeholder=' ' onChange={handlePasswordChange} />
+                <label className={clsx(style.label)}>Password</label>
+
+
+                {/* <Inputs type='password' className='input' placeholder=' ' onChan={handlePasswordChange} label='label' text='Password' /> */}
               </div>
               {errors.password && <h5 className={clsx(style.message)}>{errors.password.message}</h5>}
             </div>
@@ -78,7 +109,7 @@ const Login = () => {
           </div>
 
           <div className={clsx(style.button_ground)}>
-            <button className={clsx(style.button)} type="submit" >Đăng nhập</button>
+            <button className={clsx(style.button)} type="submit" disabled={!isSubmit} >Đăng nhập</button>
           </div>
         </form>
 
