@@ -15,14 +15,14 @@
       @include mobile {
         width: $innerContent-width-mobile;
         flex-direction: column-reverse;
-        padding: 0 12px;
+        padding:  12px;
       }
     
       // LEFT_CONTENT
       .left_content {
         .content {
           width: 500px;
-         
+          
           h2 {
             font-weight: bold;
             font-size: 2.4rem;
@@ -55,8 +55,8 @@
         background-repeat: no-repeat;
         background-image: url("./src/assets//images/manage_solution.png");
         @include mobile {
-          width: 250px;
-          height: 250px;
+          width: 100%;
+          height: 300px;
           object-fit: cover;
         }
       }
