@@ -21,6 +21,9 @@ const Login = () => {
     const { email, password } = data;
     const { emaill, passwordd } = user[0];
     const userMatch = user.find((user) => user.emaill === email && user.passwordd === password);
+    if (email === '' || password === '') {
+      setError('email', { message: 'Vui long khong de trong ' });
+    }
     if (userMatch) {
       // Đăng nhập thành công
       alert("Đăng nhập thành công");
@@ -36,17 +39,18 @@ const Login = () => {
     if (emailValue === '') {
       setIsSubmit(false)
       setError('email',
-        null
+        { message: '* Vui lòng điền thông tin' }
       );
     } else if (!emailValue.match(/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/i)) {
-      setIsSubmit(false)
+      setIsSubmit(true)
 
       setError('email', {
         message: '* Vui lòng điền Email(Vd: lions@gmail.com )'
       });
     } else {
       setIsSubmit(true)
-      setError('email', null);
+      setError('email'),
+        null
     }
   };
 
@@ -54,9 +58,9 @@ const Login = () => {
   const handlePasswordChange = (event) => {
     const passwordValue = event.target.value;
     if (passwordValue === '') {
-      setIsSubmit(false)
+      setIsSubmit(true)
       setError('password',
-        null)
+        { message: '* Vui lòng điền thông tin' })
     }
     else if (passwordValue.length < 6 || passwordValue.length > 20) {
       setIsSubmit(false)
@@ -89,7 +93,6 @@ const Login = () => {
                 <label className={clsx(style.label)}>Email:</label>
 
 
-                {/* <Inputs type='email' className='input' placeholder=' ' onChan={handleEmailChange} label='label' text='Email' /> */}
               </div>
               {errors.email && <h5 className={clsx(style.message)}>{errors.email.message}</h5>}
             </div>
@@ -102,7 +105,6 @@ const Login = () => {
                 <label className={clsx(style.label)}>Mật khẩu:</label>
 
 
-                {/* <Inputs type='password' className='input' placeholder=' ' onChan={handlePasswordChange} label='label' text='Password' /> */}
               </div>
               {errors.password && <h5 className={clsx(style.message)}>{errors.password.message}</h5>}
             </div>
