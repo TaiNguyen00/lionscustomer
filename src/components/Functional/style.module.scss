@@ -12,10 +12,9 @@
 
 .body_mobie {
   display: block;
-  min-width: $innerContent-width-mobile;
-  min-height: auto;
-  padding: 20px 0;
-  background-color: #ccf2f4;
+  // min-width: 430px;
+  min-height: 400px;
+  background-color: #CCF2F4;
 
   @include pc {
     display: none;
@@ -23,8 +22,7 @@
 }
 
 .container {
-  @include tablet {
-  }
+  @include tablet {}
 
   width: $innerContent-width-pc;
   margin: 0 auto;
@@ -44,11 +42,9 @@
   align-items: center;
   text-align: center;
 
-  @include tablet {
-  }
+  @include tablet {}
 
-  @include pc {
-  }
+  @include pc {}
 }
 
 .functional {
@@ -59,8 +55,7 @@
   position: relative;
   border-radius: 30px;
 
-  @include tablet {
-  }
+  @include tablet {}
 
   @include pc {
     min-width: 350px;
@@ -81,8 +76,7 @@
   color: #191717;
   padding: 0 0 10px 0;
 
-  @include tablet {
-  }
+  @include tablet {}
 
   @include pc {
     text-align: center;
@@ -100,8 +94,7 @@
   color: black;
   font-size: 16px;
 
-  @include tablet {
-  }
+  @include tablet {}
 
   @include pc {
     text-align: center;

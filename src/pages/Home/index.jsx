@@ -7,7 +7,7 @@ import Package from "~/components/Package"
 import TeamContact from "~/components/TeamContact"
 const Home = () => {
   return <div className={clsx(style.homeWapper)}>
-    <HeaderMain />
+    {/* <HeaderMain /> */}
     <Functional />
     <ManageSolution />
     <Package />

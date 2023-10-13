@@ -1,233 +1,283 @@
-import clsx from 'clsx'
-import style from './style.module.scss'
-import ButtonPackage from './Button/Button'
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+import clsx from "clsx";
+import style from "./style.module.scss";
+import ButtonPackage from "./Button/Button";
 
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-// import required modules
-import { Pagination, Navigation } from 'swiper/modules';
-import CheckIcon from '@mui/icons-material/Check';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
+import CheckIcon from "@mui/icons-material/Check";
 // Import Swiper styles
-import 'swiper/css';
+import "swiper/css";
 
 const Package = () => {
+  // format number
+  const VND = new Intl.NumberFormat("vi-VN", {
+    style: "currency",
+    currency: "VND",
+  });
 
-    const Packager = [
+  const Packager = [
+    {
+      // title gói
+      id: 0,
+      title: "Miễn phí",
+      imgUrlPakage: "imgsUrl",
+      button: "Dùng thử",
+
+      options: [
         {
-            // title gói
-            id: 0,
-            title: "Dùng thử",
-            imgUrlPakage: "imgsUrl",
-            button: 'Dùng thử',
-
-            options: [
-                {
-                    id: 0,
-                    titleOption: "Quản lý đơn đặt phòng",
-                    propertiesOptions: '3 Phòng',
-                },
-                {
-                    id: 0,
-                    titleOption: "Quản lý nhân sự ",
-                    propertiesOptions: '3 Phòng',
-                },
-            ],
-            isFreeBtn: true, // Đặt giá trị boolean ở đây, ví dụ: true
+          id: 0,
+          iCon: <CheckIcon fontSize="medium" />,
+          titleOption: "Quản lý đơn đặt phòng.",
+          descOption: {
+            label: "Số lượng phòng quản lý của gói này là",
+            quantityRoom: 8,
+          },
         },
         {
-            // title gói
-            id: 3,
-            title: "VIP",
-            imgUrlPakage: "imgsUrl",
-            button: 'Mua',
-            modesee: 'Xem thêm',
-            interest: [
-                {
-                    id: 0,
-                    price: 1000000,
-                    sale: 40
-                }
-            ],
-            options: [
-                {
-                    id: 0,
-                    titleOption: "Quản lý đơn đặt phòng",
-                    propertiesOptions: '3 Phòng',
-                },
-                {
-                    id: 0,
-                    titleOption: "Quản lý nhân sự ",
-                    propertiesOptions: '3 Phòng',
-                },
-            ],
-            isFreeBtn: false, // Đặt giá trị boolean ở đây, ví dụ: true
+          id: 1,
+          iCon: <CheckIcon fontSize="medium" />,
+          titleOption: "Quản lý nhân sự .",
+          descOption: {
+            label: "Số lượng nhân viên quản lý của gói này là",
+            quantityRoom: 3,
+          },
+        },
+      ],
+      isFreeBtn: true, // Đặt giá trị boolean ở đây, ví dụ: true
+    },
+
+    {
+      // title gói
+      id: 1,
+      title: "Vip",
+      imgUrlPakage: "imgsUrl",
+      button: "Mua",
+      modesee: "Xem thêm",
+      price: 5000000,
+      oldPrice: 10500000,
+      options: [
+        {
+          id: 0,
+          iCon: <CheckIcon fontSize="medium" />,
+          titleOption: "Quản lý đơn đặt phòng.",
+          descOption: {
+            label: "Số lượng phòng quản lý của gói này là",
+            quantityRoom: 8,
+          },
         },
         {
-            // title gói
-            id: 4,
-            title: "VIP PRO PRO",
-            imgUrlPakage: "imgsUrl",
-            button: 'Mua',
-            modesee: 'Xem thêm',
-            interest: [
-                {
-                    id: 0,
-                    price: 50000000,
-                    sale: 20
-                }
-            ],
-            options: [
-                {
-                    id: 0,
-                    titleOption: "Quản lý đơn đặt phòng",
-                    propertiesOptions: '3 Phòng',
-                },
-                {
-                    id: 0,
-                    titleOption: "Quản lý nhân sự ",
-                    propertiesOptions: '3 Phòng',
-                },
-            ],
-            isFreeBtn: false, // Đặt giá trị boolean ở đây, ví dụ: true
-        }
-
-        ,
+          id: 1,
+          iCon: <CheckIcon fontSize="medium" />,
+          titleOption: "Quản lý nhân sự.",
+          descOption: {
+            label: "Số lượng phòng quản lý của gói này là",
+            quantityRoom: 6,
+          },
+        },
         {
-            // title gói
-            id: 2,
-            title: "VIP PRO",
-            imgUrlPakage: "imgsUrl",
-            button: 'Mua',
-            modesee: 'Xem thêm',
-            interest: [
-                {
-                    id: 0,
-                    price: 1000000,
-                    sale: 50
-                }
-            ],
-            options: [
-                {
-                    id: 0,
-                    titleOption: "Quản lý đơn đặt phòng",
-                    propertiesOptions: '3 Phòng',
-                },
-                {
-                    id: 0,
-                    titleOption: "Quản lý nhân sự ",
-                    propertiesOptions: '3 Phòng',
-                },
-            ],
-            isFreeBtn: false, // Đặt giá trị boolean ở đây, ví dụ: true
-        }
+          id: 3,
+          iCon: <CheckIcon fontSize="medium" />,
+          titleOption: "Quản lý trạng thái phòng.",
+          descOption: {
+            label: "Số lượng phòng quản lý của gói này là",
+            quantityRoom: 4,
+          },
+        },
+      ],
+      isFreeBtn: false, // Đặt giá trị boolean ở đây, ví dụ: true
 
+      // Đặt giá trị boolean ở đây, ví dụ: true
+    },
+    {
+      // title gói
+      id: 2,
+      title: "Vip 2",
+      imgUrlPakage: "imgsUrl",
+      button: "Mua",
+      modesee: "Xem thêm",
+      price: 5000000,
+      oldPrice: 10500000,
+      options: [
+        {
+          id: 0,
+          iCon: <CheckIcon fontSize="medium" />,
+          titleOption: "Quản lý đơn đặt phòng.",
+          descOption: {
+            label: "Số lượng phòng quản lý của gói này là",
+            quantityRoom: 8,
+          },
+        },
+        {
+          id: 1,
+          iCon: <CheckIcon fontSize="medium" />,
+          titleOption: "Quản lý nhân sự.",
+          descOption: {
+            label: "Số lượng phòng quản lý của gói này là",
+            quantityRoom: 6,
+          },
+        },
+        {
+          id: 3,
+          iCon: <CheckIcon fontSize="medium" />,
+          titleOption: "Quản lý trạng thái phòng.",
+          descOption: {
+            label: "Số lượng phòng quản lý của gói này là",
+            quantityRoom: 7,
+          },
+        },
+      ],
+      isFreeBtn: false, // Đặt giá trị boolean ở đây, ví dụ: true
 
-    ];
+      // Đặt giá trị boolean ở đây, ví dụ: true
+    },
+  ];
 
-    return (
-        <>
-            {/* danh cho pc */}
-            <div className={clsx(style.body)}>
-                <div className={clsx(style.container)}>
-                    {Packager.map((pk, inx) => (
-                        <div key={pk} className={clsx(style.package)}>
-                            <h1 className={clsx(style.title)}>{pk.title}</h1>
-                            {pk.interest ? (
-                                pk.interest.map((inr) => (
+  return (
+    <>
+      {/* danh cho pc */}
+      <div className={clsx(style.package_wrapper)}>
+        <div className={clsx(style.overLay)}>
+          <div className={clsx(style.more_option)}>
+            <h2>Lựa chọn gói dịch vụ thông minh</h2>
+            <button>Thêm lựa chọn</button>
+          </div>
+          <div className={clsx(style.container)}>
+            {Packager.map((pk, inx) => (
+              <div className={clsx(style.package)} key={inx}>
+                <h2 className={clsx(style.title)}>{pk.title}</h2>
+                {pk.oldPrice ? (
+                  <h3 className={clsx(style.oldPrice)}>
+                    {VND.format(pk.oldPrice)}
+                  </h3>
+                ) : (
+                  ""
+                )}
+                {pk.price ? (
+                  <h3 className={clsx(style.newPrice)}>
+                    {VND.format(pk.price)}{" "}
+                    <span style={{ color: "#000", fontSize: "1rem" }}>
+                      / Tháng
+                    </span>
+                  </h3>
+                ) : (
+                  ""
+                )}
+                {pk.price ? (
+                  <div style={{ display: "flex", alignItems: "center" }}>
+                    <span className={clsx(style.discount)}>Giảm 50%</span>
+                  </div>
+                ) : (
+                  ""
+                )}
+                {pk.options
+                  ? pk.options.map(
+                    (
+                      item,
+                      index // Thay đổi 'limit' thành 'options'
+                    ) => (
+                      <div className={clsx(style.package_info)} key={index}>
+                        <span>
+                          {item.iCon}
+                          {item.titleOption}
+                        </span>
+                        <li className={clsx(style.package_info_text)}>
+                          {item.descOption.label}{" "}
+                          {item.descOption.quantityRoom}
+                        </li>
+                        {/* Tiếp tục thêm các mục khác ở đây nếu cần */}
+                      </div>
+                    )
+                  )
+                  : null}
+                <ButtonPackage Packager={pk} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      {/* ket thuc */}
 
-                                    <div className={clsx(style.package_interest)} key={inr.id}>
-
-                                        <p className={clsx(style.interest_price)}>{new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(inr.price)}</p>
-                                        <p><span>{new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(inr.price - (inr.price * inr.sale / 100))}</span> / tháng</p>
-                                        <div className={clsx(style.sale)}>
-                                            <h4>Giảm {inr.sale}%</h4>
-                                        </div>
-                                    </div>
-                                ))
-
-                            ) : null}
-
-
-                            {pk.options ? (
-                                pk.options.map((item) => (
-                                    <div className={clsx(style.package_info)} key={item.id}>
-                                        <div>
-                                            <CheckIcon className={clsx(style.package_check)} />
-                                        </div>
-                                        <div className={clsx(style.package_option)} >
-                                            <span>{item.titleOption}:
-                                                <span className={clsx(style.option)}>{item.propertiesOptions}</span></span>
-                                        </div>
-                                    </div>
-                                ))
-                            ) : null}
-                            <ButtonPackage Packager={pk} />
+      {/* danh cho mobie */}
+      <div className={clsx(style.container_mobie)}>
+        <div className={clsx(style.more_option)}>
+          <h2>Đa Dạng gói dịch vụ</h2>
+          <button className={clsx(style.more_opt_button)}>Thêm lựa chọn</button>
+        </div>
+        <div className={clsx(style.content_swipper)}>
+          <Swiper
+            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            spaceBetween={50}
+            slidesPerView={1}
+            centeredSlides={true}
+            pagination={{
+              clickable: true,
+            }}
+            onSwiper={(swiper) => console.log(swiper)}
+          >
+            {Packager.map((pk, inx) => (
+              <SwiperSlide className={clsx(style.swiper)} key={inx}>
+                <div className={clsx(style.package)}>
+                  <h2 className={clsx(style.title)}>{pk.title}</h2>
+                  {pk.oldPrice ? (
+                    <h3 className={clsx(style.oldPrice)}>
+                      {VND.format(pk.oldPrice)}
+                    </h3>
+                  ) : (
+                    ""
+                  )}
+                  {pk.price ? (
+                    <h3 className={clsx(style.newPrice)}>
+                      {VND.format(pk.price)}{" "}
+                      <span style={{ color: "#000", fontSize: "1rem" }}>
+                        / Tháng
+                      </span>
+                    </h3>
+                  ) : (
+                    ""
+                  )}
+                  {pk.price ? (
+                    <div style={{ display: "flex", alignItems: "center" }}>
+                      <span className={clsx(style.discount)}>Giảm 50%</span>
+                    </div>
+                  ) : (
+                    ""
+                  )}
+                  {pk.options
+                    ? pk.options.map(
+                      (
+                        item,
+                        index // Thay đổi 'limit' thành 'options'
+                      ) => (
+                        <div className={clsx(style.package_info)} key={index}>
+                          <span>
+                            {item.iCon}
+                            {item.titleOption}
+                          </span>
+                          <li className={clsx(style.package_info_text)}>
+                            {item.descOption.label}{" "}
+                            {item.descOption.quantityRoom}
+                          </li>
+                          {/* Tiếp tục thêm các mục khác ở đây nếu cần */}
                         </div>
-                    ))}
+                      )
+                    )
+                    : null}
+                  <ButtonPackage Packager={pk} />
                 </div>
-            </div>
-            {/* ket thuc */}
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </div>
+      {/* ket thuc */}
+    </>
+  );
+};
 
-            {/* danh cho mobie */}
-            < div className={clsx(style.container_mobie)}>
-                <Swiper className={clsx(style.swiperr)}
-                    slidesPerView={1}
-                    spaceBetween={30}
-                    loop={true}
-                    pagination={{
-                        clickable: true,
-                    }}
-                    navigation={false}
-                    modules={[Pagination, Navigation]}
-                >
-                    {Packager.map((pk, inx) => (
-                        <SwiperSlide className={clsx(style.swiper)} key={inx}>
-                            <div key={pk} className={clsx(style.package)}>
-                                <h1 className={clsx(style.title)}>{pk.title}</h1>
-                                {pk.interest ? (
-                                    pk.interest.map((inr) => (
-
-                                        <div className={clsx(style.package_interest)} key={inr.id}>
-
-                                            <p className={clsx(style.interest_price)}>{new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(inr.price)}</p>
-                                            <p><span>{new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(inr.price - (inr.price * inr.sale / 100))}</span> / tháng</p>
-                                            <div className={clsx(style.sale)}>
-                                                <h4>Giảm {inr.sale}%</h4>
-                                            </div>
-                                        </div>
-                                    ))
-
-                                ) : null}
-
-
-                                {pk.options ? (
-                                    pk.options.map((item) => (
-                                        <div className={clsx(style.package_info)} key={item.id}>
-                                            <div>
-                                                <CheckIcon className={clsx(style.package_check)} />
-                                            </div>
-                                            <div className={clsx(style.package_option)} >
-                                                <span>{item.titleOption}:
-                                                    <span className={clsx(style.option)}>{item.propertiesOptions}</span></span>
-                                            </div>
-                                        </div>
-                                    ))
-                                ) : null}
-                                <ButtonPackage Packager={pk} />
-                            </div>
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
-
-            </div>
-            {/* ket thuc */}
-        </>
-
-    )
-}
-
-export default Package
+export default Package;

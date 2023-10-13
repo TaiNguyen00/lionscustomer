@@ -1,7 +1,7 @@
-import React from "react";
-import style from "./style.module.scss";
-import clsx from "clsx";
-import { Swiper, SwiperSlide } from "swiper/react";
+import style from './style.module.scss'
+import clsx from 'clsx'
+import { Swiper, SwiperSlide } from 'swiper/react';
+
 // Import Swiper styles
 import "swiper/css/pagination";
 import { Pagination, Navigation } from "swiper/modules";
