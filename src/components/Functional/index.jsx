@@ -2,7 +2,10 @@ import React from 'react'
 import style from './style.module.scss'
 import clsx from 'clsx'
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+// Import Swiper styles
+import 'swiper/css/pagination';
+import { Pagination, Navigation } from 'swiper/modules';
+import 'swiper/css/navigation';
 // Import Swiper styles
 import 'swiper/css';
 const Functional = () => {
@@ -70,10 +73,15 @@ const Functional = () => {
                 <h1 className={clsx(style.title_body)}>Các chức năng chính </h1>
                 <div className={clsx(style.container_mobie)}>
                     <Swiper
-                        spaceBetween={50}
-                        slidesPerView={1} // Số lượng slide hiển thị trên màn hình
-                        onSlideChange={() => console.log('slide change')}
-                        onSwiper={(swiper) => console.log(swiper)}
+                        slidesPerView={1}
+                        spaceBetween={30}
+                        loop={true}
+                        pagination={{
+                            clickable: true,
+                        }}
+                        navigation={true}
+                        modules={[Pagination, Navigation]}
+                        className={clsx(style.mySwiper)}
                     >
                         {Functionals.map((ft) => (
                             <SwiperSlide className={clsx(style.swiper)} >

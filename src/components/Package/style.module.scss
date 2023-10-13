@@ -139,6 +139,7 @@
     width: 90%;
     border-bottom: 1px solid blanchedalmond;
     padding: 10px 0;
+    font-size: 14px;
 
     .option {
         font-weight: 600;
@@ -146,7 +147,15 @@
 
     @include tablet {}
 
-    @include pc {}
+    @include pc {
+        width: 90%;
+        border-bottom: 1px solid blanchedalmond;
+        padding: 10px 0;
+
+        .option {
+            font-weight: 600;
+        }
+    }
 }
 
 

@@ -2,6 +2,13 @@ import clsx from 'clsx'
 import style from './style.module.scss'
 import ButtonPackage from './Button/Button'
 import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+
+// import required modules
+import { Pagination, Navigation } from 'swiper/modules';
 import CheckIcon from '@mui/icons-material/Check';
 
 // Import Swiper styles
@@ -21,12 +28,12 @@ const Package = () => {
                 {
                     id: 0,
                     titleOption: "Quản lý đơn đặt phòng",
-                    propertiesOptions: '3 Phong',
+                    propertiesOptions: '3 Phòng',
                 },
                 {
                     id: 0,
                     titleOption: "Quản lý nhân sự ",
-                    propertiesOptions: '3 Phong',
+                    propertiesOptions: '3 Phòng',
                 },
             ],
             isFreeBtn: true, // Đặt giá trị boolean ở đây, ví dụ: true
@@ -49,12 +56,12 @@ const Package = () => {
                 {
                     id: 0,
                     titleOption: "Quản lý đơn đặt phòng",
-                    propertiesOptions: '3 Phong',
+                    propertiesOptions: '3 Phòng',
                 },
                 {
                     id: 0,
                     titleOption: "Quản lý nhân sự ",
-                    propertiesOptions: '3 Phong',
+                    propertiesOptions: '3 Phòng',
                 },
             ],
             isFreeBtn: false, // Đặt giá trị boolean ở đây, ví dụ: true
@@ -77,12 +84,12 @@ const Package = () => {
                 {
                     id: 0,
                     titleOption: "Quản lý đơn đặt phòng",
-                    propertiesOptions: '3 Phong',
+                    propertiesOptions: '3 Phòng',
                 },
                 {
                     id: 0,
                     titleOption: "Quản lý nhân sự ",
-                    propertiesOptions: '3 Phong',
+                    propertiesOptions: '3 Phòng',
                 },
             ],
             isFreeBtn: false, // Đặt giá trị boolean ở đây, ví dụ: true
@@ -107,12 +114,12 @@ const Package = () => {
                 {
                     id: 0,
                     titleOption: "Quản lý đơn đặt phòng",
-                    propertiesOptions: '3 Phong',
+                    propertiesOptions: '3 Phòng',
                 },
                 {
                     id: 0,
                     titleOption: "Quản lý nhân sự ",
-                    propertiesOptions: '3 Phong',
+                    propertiesOptions: '3 Phòng',
                 },
             ],
             isFreeBtn: false, // Đặt giá trị boolean ở đây, ví dụ: true
@@ -168,10 +175,14 @@ const Package = () => {
             {/* danh cho mobie */}
             < div className={clsx(style.container_mobie)}>
                 <Swiper className={clsx(style.swiperr)}
-                    spaceBetween={50}
-                    slidesPerView={1} // Số lượng slide hiển thị trên màn hình
-                    onSlideChange={() => console.log('slide change')}
-                    onSwiper={(swiper) => console.log(swiper)}
+                    slidesPerView={1}
+                    spaceBetween={30}
+                    loop={true}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    navigation={false}
+                    modules={[Pagination, Navigation]}
                 >
                     {Packager.map((pk, inx) => (
                         <SwiperSlide className={clsx(style.swiper)} key={inx}>
@@ -211,6 +222,7 @@ const Package = () => {
                         </SwiperSlide>
                     ))}
                 </Swiper>
+
             </div>
             {/* ket thuc */}
         </>
