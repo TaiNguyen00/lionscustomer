@@ -8,23 +8,22 @@ import { useForm } from 'react-hook-form';
 
 const Login = () => {
   const [isSubmit, setIsSubmit] = useState(false)
-  console.log(isSubmit);
   const { register, formState: { errors }, handleSubmit, setError } = useForm();
   const user = [
     {
-      email: 'trunghuu@gmail.com',
-      password: "12322222"
+      emaill: 'trunghuu@gmail.com',
+      passwordd: "12322222"
     }
   ]
 
 
   const onSubmit = (data) => {
     const { email, password } = data;
-    console.log(email, password);
-    const userMatch = user.find((user) => user.email === email && user.password === password);
+    const { emaill, passwordd } = user[0];
+    const userMatch = user.find((user) => user.emaill === email && user.passwordd === password);
     if (userMatch) {
       // Đăng nhập thành công
-      console.log("Đăng nhập thành công");
+      alert("Đăng nhập thành công");
     } else {
       // Hiển thị thông báo lỗi
       setError('email', { message: 'Email hoặc mật khẩu không đúng' });
@@ -37,11 +36,13 @@ const Login = () => {
     if (emailValue === '') {
       setIsSubmit(false)
       setError('email',
-        { message: 'khong duoc bo trong' }
+        null
       );
     } else if (!emailValue.match(/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/i)) {
+      setIsSubmit(false)
+
       setError('email', {
-        message: 'Email không hợp lệ'
+        message: '* Vui lòng điền Email(Vd: lions@gmail.com )'
       });
     } else {
       setIsSubmit(true)
@@ -52,15 +53,16 @@ const Login = () => {
   // Hàm xử lý sự kiện khi trường password thay đổi
   const handlePasswordChange = (event) => {
     const passwordValue = event.target.value;
-    console.log(passwordValue);
     if (passwordValue === '') {
       setIsSubmit(false)
       setError('password',
-        { message: 'khong duoc bo trong' })
+        null)
     }
     else if (passwordValue.length < 6 || passwordValue.length > 20) {
+      setIsSubmit(false)
+
       setError('password', {
-        message: 'Password phải từ 6 đến 20 ký tự'
+        message: '* Mật khẩu phải từ 6 đến 20 ký tự'
       });
     } else {
       setIsSubmit(true)
@@ -75,8 +77,8 @@ const Login = () => {
         <div className={clsx(style.logo)}>
           <img src={logo} alt="" />
         </div>
-        <h2 className={clsx(style.text)}>Đăng Nhập </h2>
-        <h4 className={clsx(style.h4)}>Xin chào, vui lòng điền vào thông tin đăng nhập</h4>
+        <h2 className={clsx(style.text)}>Đăng nhập </h2>
+        <h4 className={clsx(style.h4)}>Xin chào, vui lòng điền thông tin đăng nhập</h4>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className={clsx(style.from)}>
             {/* Trường nhập email */}
@@ -84,7 +86,7 @@ const Login = () => {
               <div className={clsx(style.from_div)}>
 
                 <input type='email'{...register("email")} className={clsx(style.input)} placeholder=' ' onChange={handleEmailChange} />
-                <label className={clsx(style.label)}>Email</label>
+                <label className={clsx(style.label)}>Email:</label>
 
 
                 {/* <Inputs type='email' className='input' placeholder=' ' onChan={handleEmailChange} label='label' text='Email' /> */}
@@ -97,7 +99,7 @@ const Login = () => {
               <div className={clsx(style.from_div)}>
 
                 <input type='password'{...register("password")} className={clsx(style.input)} placeholder=' ' onChange={handlePasswordChange} />
-                <label className={clsx(style.label)}>Password</label>
+                <label className={clsx(style.label)}>Mật khẩu:</label>
 
 
                 {/* <Inputs type='password' className='input' placeholder=' ' onChan={handlePasswordChange} label='label' text='Password' /> */}
