@@ -3,8 +3,10 @@
 
 .contact_wrapper {
   margin: 50px 0 50px 0;
+  display: flex;
+  justify-content: center;
   @include mobile {
-    margin: 0%;
+    margin: 0;
   }
   .wrapper_content {
     min-height: 400px;
@@ -16,7 +18,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 auto;
     
     // 
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
@@ -24,9 +25,8 @@
     @include mobile {
       width: $innerContent-width-mobile;
       flex-direction: column;
-      padding: 50px;
       border-radius: 0;
-      
+      padding: 20px;
     }
     // LEFT-CONTENT
     .left_content {
@@ -34,7 +34,10 @@
         width: 470px;
         min-height: 200px;
         @include mobile {
-          width: 300px;
+          padding: 24px;
+          min-height: 0;
+          width: 340px;
+
         }
         h2 {
           font-weight: bold;
@@ -64,9 +67,8 @@
         height: 300px;
         width: 300px;
         background-image: url("/src/assets/images/team-contact.png");
-
         @include mobile {
-
+        height: 300px;
         }
       }
     }

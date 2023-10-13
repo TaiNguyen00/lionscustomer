@@ -1,4 +1,3 @@
-import React from 'react'
 import style from './style.module.scss'
 import clsx from 'clsx'
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -53,7 +52,7 @@ const Functional = () => {
                 <h1 className={clsx(style.title_body)}>Các chức năng chính có trong các gói</h1>
                 <div className={clsx(style.container)}>
                     {Functionals.map((ft) => (
-                        <div className={clsx(style.functional)}>
+                        <div className={clsx(style.functional)} key={ft.id}>
                             <h1 className={clsx(style.title)}>{ft.title}</h1>
                             <div className={clsx(style.functional_text)}>
                                 <p className={clsx(style.text)}>{ft.text_funcional}</p>
@@ -76,7 +75,7 @@ const Functional = () => {
                         onSwiper={(swiper) => console.log(swiper)}
                     >
                         {Functionals.map((ft) => (
-                            <SwiperSlide className={clsx(style.swiper)} >
+                            <SwiperSlide className={clsx(style.swiper)} key={ft.id}>
                                 <div className={clsx(style.functional)}>
                                     <h1 className={clsx(style.title)}>{ft.title}</h1>
                                     <div className={clsx(style.functional_text)}>
