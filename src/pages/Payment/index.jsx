@@ -32,18 +32,16 @@ const Payment = () => {
           <div className={clsx(styles.inforUser)}>
             <h2>Thông tin khách hàng</h2>
             <div className={clsx(styles.inforuser)}>
-              <div className={clsx(styles.infor)}>
-                <h3>Tên:</h3>
-                <h3>Mã khách hàng:</h3>
-                <h3>Tổng tiền thanh toán:</h3>
-              </div>
               {
                 users.map((user) => {
                   return (
                     <div className={clsx(styles.user)} key={user.clientCode}>
-                      <p>{user.name}</p>
-                      <p>{user.clientCode}</p>
-                      <p>{formatNumber()}</p>
+                      <p><b>Tên:</b> {user.name}</p>
+                      <p><b>Mã khách hàng: </b>  {user.clientCode}</p>
+                      <p>
+                        <b>
+                          Tổng tiền thanh toán:
+                        </b>{formatNumber()}</p>
                     </div>
                   );
                 })

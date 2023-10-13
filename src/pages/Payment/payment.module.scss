@@ -39,8 +39,9 @@ $border: #D9D9D9;
     padding: 10px;
     margin: 10px auto;
 
+
     @include tablet {
-        width: 80%;
+        width: 50%;
         margin: 0 auto;
         margin-bottom: 10px;
     }
@@ -166,22 +167,13 @@ input[type="button"] {
     margin-bottom: 10px;
 }
 
-.inforuser {
-    display: flex;
-}
 
-.infor {
-    margin: 10px;
-}
 
 .user {
     margin: 10px;
     font-size: 19px;
 }
 
-.user p:last-child {
-    font-weight: bold;
-}
 
 .detail>table,
 tr,
