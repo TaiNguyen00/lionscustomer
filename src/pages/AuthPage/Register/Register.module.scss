@@ -29,7 +29,7 @@ $error-color: red;
 
         }
         @include pc{
-         font-size: 48px;
+         font-size: 2rempx;
         }
     }
   .form_group {
@@ -95,6 +95,7 @@ $error-color: red;
   { 
     margin: 0 auto;
       width: 357px;
+      max-width: 100%;
       padding: 10px 5px;
       border: 1px solid $primary-color; /* Sử dụng màu tương tự với background button */
       border-radius: 5px;

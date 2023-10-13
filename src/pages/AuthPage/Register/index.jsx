@@ -179,7 +179,7 @@ const Register = () => {
           </div>
         </div>
         <p className={clsx(styles.fuilt_register)}>
-          Chưa có tài khoản Lions? <Link to="">Đăng Nhập ngay</Link>
+          Chưa có tài khoản Lions? <Link to="/login">Đăng Nhập ngay</Link>
         </p>
       </form>
     </div>
