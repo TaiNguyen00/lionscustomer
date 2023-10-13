@@ -1,10 +1,12 @@
-import Mainlayout from "~/layouts/MainLayout";
+// import Mainlayout from "~/layouts/MainLayout";
 // import Login from "~/pages/AuthPage/Login";
 // import Register from "~/pages/AuthPage/Register";
 // import Page404 from "~/pages/AuthPage/404";
-import { LoginPage, RegisterPage } from "~/pages/AuthPage";
-import { Page404, Invoice, Payment } from "~/pages";
+import {LoginPage, RegisterPage} from "~/pages/AuthPage";
+import {Page404, Invoice, Payment, Paymentfailure} from "~/pages";
+
 import Home from "../pages/Home";
+
 const routers = [
   {
     id: 0,
@@ -18,7 +20,7 @@ const routers = [
   },
   {
     id: 2,
-    path: "/register",
+    path: "/Register",
     component: RegisterPage,
   },
   {
@@ -35,6 +37,11 @@ const routers = [
     id: 5,
     path: "/payment",
     component: Payment,
+  },
+  {
+    id: 5,
+    path: "/paymentfailure",
+    component: Paymentfailure,
   },
 ];
 export default routers;
