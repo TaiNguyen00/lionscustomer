@@ -1,21 +1,37 @@
 @use "~/scss/" as *;
 
+.package_wrapper {
+ 
+    background-image: url("../../assets//images/bgPac_pc.png");
 
-.container {
-    display: none;
-
-    @include tablet {}
-
-    @include pc {
-        min-height: 755px;
-        background-image: url("../../assets//images/bgPac_pc.png");
-        background-repeat: no-repeat;
+    .overLay {
+        background-color: rgba(255, 255, 255, 0.4);
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(1px);
         width: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 30px;
+
+        display: flex;
+        flex-direction: column;
         align-items: center;
-        padding: 0 10px;
+        
+    }
+    
+    @include mobile {
+       display: none;
+    }
+    .container {
+        @include tablet {}
+        @include pc {
+            min-height: 755px;
+            background-repeat: no-repeat;
+            width: $innerContent-width-pc;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 110px;
+            align-items: center;
+
+
+        }
     }
 }
 
@@ -40,32 +56,7 @@
         display: none;
     }
 
-    .more_option {
-        width: 300px;
-        height: 100px;
-        background-color:  #195B97;
-        text-align: center;
-        border-radius: 20px;
-        color: #F4F2DE;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        margin-left: 34px;
-        margin-bottom: 40px;
-
-        button {
-            margin-top: 12px;
-            padding: 12px 20px;
-            background-color: #008E6F;
-            color: #F4F2DE;
-            outline: none;
-            border: none;
-            border-radius: 20px;
-            font-size: 1rem;
-        }
-    }
+ 
 }
 
 .package {
@@ -233,6 +224,50 @@
         display: grid;
         grid-template-columns: 1fr 1fr;    
         bottom: 30px;
+    }
+}
+.more_option {
+    width: 300px;
+    height: 100px;
+    background-color:  #195B97;
+    text-align: center;
+    border-radius: 20px;
+    color: #F4F2DE;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: 34px;
+    margin-bottom: 40px;
+
+    @include pc {
+        width: 1036px;
+        height: 217px;
+    }
+
+    h2 {
+        @include pc {
+        width: 400px;
+        font-size: 2rem;
+        color: #fff;
+        }
+    }
+    button {
+        margin-top: 12px;
+        padding: 12px 20px;
+        background-color: #008E6F;
+        color: #F4F2DE;
+        outline: none;
+        border: none;
+        border-radius: 20px;
+        font-size: 1rem;
+
+        @include pc {
+            font-size: 1.4rem;
+            padding: 12px 60px;
+            cursor: pointer;
+        }
     }
 }
 

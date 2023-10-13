@@ -141,54 +141,65 @@ const Package = () => {
   return (
     <>
       {/* danh cho pc */}
-      <div className={clsx(style.container)}>
-        {Packager.map((pk, inx) => (
-          <div className={clsx(style.package)} key={inx}>
-            <h2 className={clsx(style.title)}>{pk.title}</h2>
-            {pk.oldPrice ? (
-              <h3 className={clsx(style.oldPrice)}>
-                {VND.format(pk.oldPrice)}
-              </h3>
-            ) : (
-              ""
-            )}
-            {pk.price ? (
-              <h3 className={clsx(style.newPrice)}>
-                {VND.format(pk.price)}{" "}
-                <span style={{ color: "#000", fontSize: "1rem" }}>/ Tháng</span>
-              </h3>
-            ) : (
-              ""
-            )}
-            {pk.price ? (
-              <div style={{ display: "flex", alignItems: "center" }}>
-                <span className={clsx(style.discount)}>Giảm 50%</span>
-              </div>
-            ) : (
-              ""
-            )}
-            {pk.options
-              ? pk.options.map(
-                  (
-                    item,
-                    index // Thay đổi 'limit' thành 'options'
-                  ) => (
-                    <div className={clsx(style.package_info)} key={index}>
-                      <span>
-                        {item.iCon}
-                        {item.titleOption}
-                      </span>
-                      <li className={clsx(style.package_info_text)}>
-                        {item.descOption.label} {item.descOption.quantityRoom}
-                      </li>
-                      {/* Tiếp tục thêm các mục khác ở đây nếu cần */}
-                    </div>
-                  )
-                )
-              : null}
-            <ButtonPackage Packager={pk} />
+      <div className={clsx(style.package_wrapper)}>
+        <div className={clsx(style.overLay)}>
+          <div className={clsx(style.more_option)}>
+            <h2>Lựa chọn gói dịch vụ thông minh</h2>
+            <button>Thêm lựa chọn</button>
           </div>
-        ))}
+          <div className={clsx(style.container)}>
+            {Packager.map((pk, inx) => (
+              <div className={clsx(style.package)} key={inx}>
+                <h2 className={clsx(style.title)}>{pk.title}</h2>
+                {pk.oldPrice ? (
+                  <h3 className={clsx(style.oldPrice)}>
+                    {VND.format(pk.oldPrice)}
+                  </h3>
+                ) : (
+                  ""
+                )}
+                {pk.price ? (
+                  <h3 className={clsx(style.newPrice)}>
+                    {VND.format(pk.price)}{" "}
+                    <span style={{ color: "#000", fontSize: "1rem" }}>
+                      / Tháng
+                    </span>
+                  </h3>
+                ) : (
+                  ""
+                )}
+                {pk.price ? (
+                  <div style={{ display: "flex", alignItems: "center" }}>
+                    <span className={clsx(style.discount)}>Giảm 50%</span>
+                  </div>
+                ) : (
+                  ""
+                )}
+                {pk.options
+                  ? pk.options.map(
+                      (
+                        item,
+                        index // Thay đổi 'limit' thành 'options'
+                      ) => (
+                        <div className={clsx(style.package_info)} key={index}>
+                          <span>
+                            {item.iCon}
+                            {item.titleOption}
+                          </span>
+                          <li className={clsx(style.package_info_text)}>
+                            {item.descOption.label}{" "}
+                            {item.descOption.quantityRoom}
+                          </li>
+                          {/* Tiếp tục thêm các mục khác ở đây nếu cần */}
+                        </div>
+                      )
+                    )
+                  : null}
+                <ButtonPackage Packager={pk} />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
       {/* ket thuc */}
 
@@ -196,7 +207,7 @@ const Package = () => {
       <div className={clsx(style.container_mobie)}>
         <div className={clsx(style.more_option)}>
           <h2>Đa Dạng gói dịch vụ</h2>
-          <button>Thêm lựa chọn</button>
+          <button className={clsx(style.more_opt_button)}>Thêm lựa chọn</button>
         </div>
         <div className={clsx(style.content_swipper)}>
           <Swiper
