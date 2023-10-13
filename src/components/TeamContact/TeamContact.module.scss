@@ -1,0 +1,77 @@
+@use "~/scss/" as *;
+
+
+.contact_wrapper {
+  margin: 50px 0 50px 0;
+  display: flex;
+  justify-content: center;
+  @include mobile {
+    margin: 0;
+  }
+  .wrapper_content {
+    min-height: 400px;
+    width: $innerContent-width-pc;
+    background-color: #A4EBF3;
+    padding: 100px 90px;
+    border-radius: 20px;
+    //layout
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    // 
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    
+    @include mobile {
+      width: $innerContent-width-mobile;
+      flex-direction: column;
+      border-radius: 0;
+      padding: 20px;
+    }
+    // LEFT-CONTENT
+    .left_content {
+      .content {
+        width: 470px;
+        min-height: 200px;
+        @include mobile {
+          padding: 24px;
+          min-height: 0;
+          width: 340px;
+
+        }
+        h2 {
+          font-weight: bold;
+          font-size: 2.4rem;
+          
+          @include mobile {
+            font-size: 1.5rem;
+          }
+        }
+  
+        p {
+          margin-top: 40px;
+          font-size: 1.5rem;
+          color: #777777;
+
+          @include mobile {
+            margin-top: 20px;
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  
+    //RIGHT-CONTENT
+    .right_content {
+      .content {
+        height: 300px;
+        width: 300px;
+        background-image: url("/src/assets/images/team-contact.png");
+        @include mobile {
+        height: 300px;
+        }
+      }
+    }
+  }
+}
+// fix home responsive

@@ -4,11 +4,12 @@ import Mainlayout from "~/layouts/MainLayout";
 // import Page404 from "~/pages/AuthPage/404";
 import { LoginPage, RegisterPage } from "~/pages/AuthPage";
 import { Page404, Invoice, Payment } from "~/pages";
+import Home from "../pages/Home";
 const routers = [
   {
     id: 0,
     path: "/",
-    component: Mainlayout,
+    component: Home,
   },
   {
     id: 1,

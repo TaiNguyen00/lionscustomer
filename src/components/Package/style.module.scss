@@ -1,46 +1,95 @@
 @use "~/scss/" as *;
 
+.package_wrapper {
+ 
+    background-image: url("../../assets//images/bgPac_pc.png");
 
-.container {
-    display: none;
+    .overLay {
+        background-color: rgba(255, 255, 255, 0.4);
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(1px);
+        width: 100%;
 
-    @include tablet {}
-
-    @include pc {
-        min-height: 755px;
-        background-color: #CCF2F4;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 30px;
+        display: flex;
+        flex-direction: column;
         align-items: center;
-        padding: 0 10px;
+        
+    }
+    
+    @include mobile {
+       display: none;
+    }
+    .container {
+        @include tablet {}
+        @include pc {
+            min-height: 755px;
+            background-repeat: no-repeat;
+            width: $innerContent-width-pc;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 110px;
+            align-items: center;
+
+
+        }
     }
 }
 
 // fig cung wight
 .container_mobie {
     display: block;
-    min-width: 430px;
-    min-height: 650px;
-    background-color: #CCF2F4;
+    width: $innerContent-width-mobile;
+    min-height: 800px;
+    background-image: url("../../assets//images/bgPackage.png");
     padding: 0 10px;
-    display: flex;
     align-items: center;
+    
+    .content_swipper {
+        .swiper-pagination {
+            margin-top: 500px;
+        }
+    }
 
     @include tablet {}
 
     @include pc {
         display: none;
     }
+
+ 
 }
 
 .package {
-    min-width: 350px;
-    min-height: 530px;
+    width: 300px;
+    min-height: 449px;
     background: #FFFFFF;
     position: relative;
     border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    margin:  0 auto;
+    overflow: hidden;
 
+
+    .newPrice {
+        text-decoration: none;
+        font-size: 1.4rem;
+        color: #FF0000;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    .oldPrice {
+        text-align: center;
+        text-decoration: line-through;
+        font-size: 1rem;
+    }
+    .discount {
+        text-align: center;
+        background-color: #FCBB3E;
+        margin: 0 auto;
+        padding: 4px 12px;
+        border-radius: 5px;
+        margin-bottom: 12px;
+    }
     @include tablet {}
 
     @include pc {
@@ -56,9 +105,10 @@
 .title {
 
     text-align: center;
-    padding: 30px 0 10px 0;
-    font-weight: 700;
+    padding: 30px ;
+    font-weight: bold;
     color: #008E6F;
+    font-size: 2rem;
 
     @include tablet {}
 
@@ -72,19 +122,28 @@
 
 .package_info {
 
-    padding: 0 70px;
-
+    padding: 0 12px;
+    margin-bottom: 20px;
+    
+    span {
+        font-size: 1.2rem;
+    }
     @include tablet {}
 
     @include pc {
-        padding: 0 70px;
+        
     }
+
+
 }
 
 .package_info_text {
     text-decoration: solid;
     margin-bottom: 5px;
-
+    padding-left: 24px;
+    line-height: 1.4rem;
+    font-size: 1rem;
+    margin-top: 5px;
     @include tablet {}
 
 
@@ -92,6 +151,7 @@
     @include pc {
         text-decoration: solid;
         margin-bottom: 5px;
+        list-style: none;
     }
 }
 
@@ -112,10 +172,9 @@
 
 // button package
 .button_package {
-
     display: flex;
     justify-content: center;
-
+    overflow: hidden;
     @include tablet {}
 
     @include pc {
@@ -156,23 +215,63 @@
 
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    position: absolute;
-    bottom: 50px;
-
+    gap: 10px;
+    bottom: 30px;
+    margin-bottom: 35px;
     @include tablet {}
 
     @include pc {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-        position: absolute;
-        bottom: 50px;
+        grid-template-columns: 1fr 1fr;    
+        bottom: 30px;
+    }
+}
+.more_option {
+    width: 300px;
+    height: 100px;
+    background-color:  #195B97;
+    text-align: center;
+    border-radius: 20px;
+    color: #F4F2DE;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: 34px;
+    margin-bottom: 40px;
+
+    @include pc {
+        width: 1036px;
+        height: 217px;
+    }
+
+    h2 {
+        @include pc {
+        width: 400px;
+        font-size: 2rem;
+        color: #fff;
+        }
+    }
+    button {
+        margin-top: 12px;
+        padding: 12px 20px;
+        background-color: #008E6F;
+        color: #F4F2DE;
+        outline: none;
+        border: none;
+        border-radius: 20px;
+        font-size: 1rem;
+
+        @include pc {
+            font-size: 1.4rem;
+            padding: 12px 60px;
+            cursor: pointer;
+        }
     }
 }
 
 .button_buy {
-
     min-height: 40px;
     min-width: 140px;
     font-size: 17px;
