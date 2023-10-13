@@ -176,7 +176,7 @@ $from_color: #0065FD;
 
         &:focus+.label {
             top: 0;
-            left: 130px;
+            left: 220px;
             padding: 10px;
             display: inline-block;
             background-color: white;
@@ -186,7 +186,7 @@ $from_color: #0065FD;
 
         &:not(:placeholder-shown)+.label {
             top: 0;
-            left: 130px;
+            left: 220px;
             padding: 8px;
             display: inline-block;
             background-color: white;
@@ -222,7 +222,7 @@ $from_color: #0065FD;
         font-size: 16px;
         top: 50%;
         transform: translateY(-50%);
-        left: 140px;
+        left: 230px;
         user-select: none;
         color: #999;
         pointer-events: none;
@@ -246,9 +246,8 @@ $from_color: #0065FD;
         padding: 7px 0 10px 0;
         font-size: 14px;
 
-        margin-left: 55px;
         font-weight: 400;
-        margin-left: 115px;
+        margin-left: 230px;
     }
 }
 
@@ -271,7 +270,7 @@ $from_color: #0065FD;
 
     @include pc {
         color: #0065FD;
-        margin-left: 115px;
+        margin-left: 230px;
         text-decoration: none;
         font-size: 15px;
     }

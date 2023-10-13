@@ -7,7 +7,6 @@ import { useForm } from 'react-hook-form';
 
 
 const Login = () => {
-  const [isSubmit, setIsSubmit] = useState(false)
   const { register, formState: { errors }, handleSubmit, setError } = useForm();
   const user = [
     {
@@ -21,15 +20,16 @@ const Login = () => {
     const { email, password } = data;
     const { emaill, passwordd } = user[0];
     const userMatch = user.find((user) => user.emaill === email && user.passwordd === password);
-    if (email === '' || password === '') {
-      setError('email', { message: 'Vui long khong de trong ' });
-    }
-    if (userMatch) {
+    if (!email || !password) {
+      setError('email', { message: '* Vui lòng điền đầy đủ email và mật khẩu' });
+
+    } else if (!userMatch) {
       // Đăng nhập thành công
-      alert("Đăng nhập thành công");
+      setError('email', { message: 'Email hoặc mật khẩu không đúng' });
+
     } else {
       // Hiển thị thông báo lỗi
-      setError('email', { message: 'Email hoặc mật khẩu không đúng' });
+      alert("Đăng nhập thành công");
     }
   }
 
@@ -37,18 +37,15 @@ const Login = () => {
   const handleEmailChange = (event) => {
     const emailValue = event.target.value;
     if (emailValue === '') {
-      setIsSubmit(false)
       setError('email',
         { message: '* Vui lòng điền thông tin' }
       );
     } else if (!emailValue.match(/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/i)) {
-      setIsSubmit(true)
 
       setError('email', {
         message: '* Vui lòng điền Email(Vd: lions@gmail.com )'
       });
     } else {
-      setIsSubmit(true)
       setError('email'),
         null
     }
@@ -58,18 +55,15 @@ const Login = () => {
   const handlePasswordChange = (event) => {
     const passwordValue = event.target.value;
     if (passwordValue === '') {
-      setIsSubmit(true)
       setError('password',
         { message: '* Vui lòng điền thông tin' })
     }
     else if (passwordValue.length < 6 || passwordValue.length > 20) {
-      setIsSubmit(false)
 
       setError('password', {
         message: '* Mật khẩu phải từ 6 đến 20 ký tự'
       });
     } else {
-      setIsSubmit(true)
       setError('password', null);
     }
   };
@@ -113,7 +107,7 @@ const Login = () => {
           </div>
 
           <div className={clsx(style.button_ground)}>
-            <button className={clsx(style.button)} type="submit" disabled={!isSubmit} >Đăng nhập</button>
+            <button className={clsx(style.button)} type="submit" >Đăng nhập</button>
           </div>
         </form>
 
