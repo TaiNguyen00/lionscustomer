@@ -11,133 +11,133 @@ $error-color: red;
     padding: 20px;
    
     
-    @include tablet{
-
-    }
-    @include pc{
-      width: 800px;
-      height: 100vh;
-      max-width: 100%;
-      text-align: center;
-      margin: 0 auto;
-     
-    }
-    .h2{
-        font-size:22px ;
-        margin: 0.7rem;
         @include tablet{
 
         }
         @include pc{
-         font-size: 2rempx;
+          width: 800px;
+          height: 100vh;
+          max-width: 100%;
+          text-align: center;
+          margin: 0 auto;
+        
         }
-    }
-  .form_group {
- 
-    text-align: center;
-    margin: 0 auto;
+        .h2{
+            font-size:22px ;
+            margin: 0.7rem;
+            @include tablet{
+
+            }
+            @include pc{
+            font-size: 2rempx;
+            }
+        }
+      .form_group {
     
-      //  margin-bottom: 1rem;
-       display: flex;
-       flex-direction: column;
-       width: 357px;
-       max-width: 100%;
-  
-      @include tablet{
+        text-align: center;
+        margin: 0 auto;
+        
+          //  margin-bottom: 1rem;
+          display: flex;
+          flex-direction: column;
+          width: 357px;
+          max-width: 100%;
+      
+          @include tablet{
 
-      }
-      @include pc{
-        width: 800px;
-     margin-bottom: 0.6rem;
-        max-width: 100%;
-      }
-      .form_control{
-        position: relative;
+          }
+          @include pc{
+            width: 800px;
+        margin-bottom: 0.6rem;
+            max-width: 100%;
+          }
+              .form_control{
+                position: relative;
 
-        font-family: 'Inter';
-        font-size: 10px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-      }
-     input{
-       max-width: 100%;
-      width: 357px;
-    max-width: 100%;
-    padding: 0.8rem 1rem;
-    margin: 0.4rem;
-    font-size: 10px;
-    @include tablet{
-      width: 520px;
-      font-size: 12px;
-    }
-    @include pc{
-      width: 721px;
-      font-size: 16px;
-    }
-    }
-     .toggle_password {
-      position: absolute;
-      right: 0rem;
-      top: 50%;
-      transform: translateY(-50%);
-      cursor: pointer;
-      font-size: 0.75rem;
-      color: #ccc;
-      @include pc{
-        position: absolute;
-        right: 1.8rem;
-        top: 50%;
-      }
-    }
+                font-family: 'Inter';
+                font-size: 10px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+              }
+              input{
+                max-width: 100%;
+                width: 357px;
+              max-width: 100%;
+              padding: 0.8rem 1rem;
+              margin: 0.4rem;
+              font-size: 10px;
+              @include tablet{
+                width: 520px;
+                font-size: 12px;
+              }
+              @include pc{
+                width: 721px;
+                font-size: 16px;
+              }
+              }
+                .toggle_password {
+                  position: absolute;
+                  right: 0rem;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  cursor: pointer;
+                  font-size: 0.75rem;
+                  color: #ccc;
+                  @include pc{
+                    position: absolute;
+                    right: 1.8rem;
+                    top: 50%;
+                  }
+                }
    
-    .button
-  { 
-    margin: 0 auto;
-      width: 357px;
-      max-width: 100%;
-      padding: 10px 5px;
-      border: 1px solid $primary-color; /* Sử dụng màu tương tự với background button */
-      border-radius: 5px;
-      background-color: $primary-color;
-      margin-left: 5px;
-      color: #fff;
-      cursor: pointer;
-      font-size: 12px;
-      @include tablet{}
-    @include pc{
-      margin: 0 auto;
-      width: 721px;
-      font-size: 18px;
-    }
-    }
+              .button
+            { 
+              margin: 0 auto;
+                width: 357px;
+                max-width: 100%;
+                padding: 10px 5px;
+                border: 1px solid $primary-color; /* Sử dụng màu tương tự với background button */
+                border-radius: 5px;
+                background-color: $primary-color;
+                margin-left: 5px;
+                color: #fff;
+                cursor: pointer;
+                font-size: 12px;
+                @include tablet{}
+              @include pc{
+                margin: 0 auto;
+                width: 721px;
+                font-size: 18px;
+              }
+              }
    
-    input[type="text"] ,input[type="email"],input[type="password"]{
-      flex: 1; /* Cho phép input mở rộng để lấp đầy khoảng trống còn lại */
-      padding: 10px;
-      // border: 2px solid #ccc;
-     border: 1px solid rgba(0, 0, 0, 0.50);
+              input[type="text"] ,input[type="email"],input[type="password"]{
+                flex: 1; /* Cho phép input mở rộng để lấp đầy khoảng trống còn lại */
+                padding: 10px;
+                // border: 2px solid #ccc;
+              border: 1px solid rgba(0, 0, 0, 0.50);
 
 
-      border-radius: 5px;
-    }
-   
-  }
-  .register_error{
-    min-height: 20px;
-  }
-  .error {
-    display: flex;
-    justify-content: flex-start;
-    color:$error-color;
-    font-size: 10px;
-    margin-top: 0rem;
-    margin-left: 0.8rem;
-    font-family: "Inter", sans-serif;
-    @include pc{
-      font-size: 1rem;
-    }
-  }
+                border-radius: 5px;
+              }
+            
+            }
+            .register_error{
+              min-height: 20px;
+            }
+            .error {
+              display: flex;
+              justify-content: flex-start;
+              color:$error-color;
+              font-size: 10px;
+              margin-top: 0rem;
+              margin-left: 0.8rem;
+              font-family: "Inter", sans-serif;
+              @include pc{
+                font-size: 1rem;
+              }
+            }
  
   
  
@@ -145,6 +145,7 @@ $error-color: red;
     font-family: "Inter", sans-serif;
     font-size: 10px;
     color: rgba(0, 0, 0, 0.50);
+    margin-top: 1rem;
 
      a{
        text-decoration: none;

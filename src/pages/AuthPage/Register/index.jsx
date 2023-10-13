@@ -28,7 +28,7 @@ const Register = () => {
 
   return (
     <div className={clsx(styles.register_form)}>
-      <h2 className={clsx(styles.h2)}>Đăng Ký tài khoản</h2>
+      <h2 className={clsx(styles.h2)}>Đăng ký tài khoản</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className={clsx(styles.form_group)}>
           <div className={clsx(styles.form_control)}>
@@ -175,7 +175,7 @@ const Register = () => {
         </div>
         <div className={clsx(styles.form_group)}>
           <div className={clsx(styles.form_control)}>
-            <button className={clsx(styles.button)}>tạo tài khoản</button>
+            <button className={clsx(styles.button)}>Tạo tài khoản</button>
           </div>
         </div>
         <p className={clsx(styles.fuilt_register)}>
