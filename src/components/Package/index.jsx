@@ -177,23 +177,23 @@ const Package = () => {
                 )}
                 {pk.options
                   ? pk.options.map(
-                      (
-                        item,
-                        index // Thay đổi 'limit' thành 'options'
-                      ) => (
-                        <div className={clsx(style.package_info)} key={index}>
-                          <span>
-                            {item.iCon}
-                            {item.titleOption}
-                          </span>
-                          <li className={clsx(style.package_info_text)}>
-                            {item.descOption.label}{" "}
-                            {item.descOption.quantityRoom}
-                          </li>
-                          {/* Tiếp tục thêm các mục khác ở đây nếu cần */}
-                        </div>
-                      )
+                    (
+                      item,
+                      index // Thay đổi 'limit' thành 'options'
+                    ) => (
+                      <div className={clsx(style.package_info)} key={index}>
+                        <span>
+                          {item.iCon}
+                          {item.titleOption}
+                        </span>
+                        <li className={clsx(style.package_info_text)}>
+                          {item.descOption.label}{" "}
+                          {item.descOption.quantityRoom}
+                        </li>
+                        {/* Tiếp tục thêm các mục khác ở đây nếu cần */}
+                      </div>
                     )
+                  )
                   : null}
                 <ButtonPackage Packager={pk} />
               </div>
@@ -250,23 +250,23 @@ const Package = () => {
                   )}
                   {pk.options
                     ? pk.options.map(
-                        (
-                          item,
-                          index // Thay đổi 'limit' thành 'options'
-                        ) => (
-                          <div className={clsx(style.package_info)} key={index}>
-                            <span>
-                              {item.iCon}
-                              {item.titleOption}
-                            </span>
-                            <li className={clsx(style.package_info_text)}>
-                              {item.descOption.label}{" "}
-                              {item.descOption.quantityRoom}
-                            </li>
-                            {/* Tiếp tục thêm các mục khác ở đây nếu cần */}
-                          </div>
-                        )
+                      (
+                        item,
+                        index // Thay đổi 'limit' thành 'options'
+                      ) => (
+                        <div className={clsx(style.package_info)} key={index}>
+                          <span>
+                            {item.iCon}
+                            {item.titleOption}
+                          </span>
+                          <li className={clsx(style.package_info_text)}>
+                            {item.descOption.label}{" "}
+                            {item.descOption.quantityRoom}
+                          </li>
+                          {/* Tiếp tục thêm các mục khác ở đây nếu cần */}
+                        </div>
                       )
+                    )
                     : null}
                   <ButtonPackage Packager={pk} />
                 </div>
