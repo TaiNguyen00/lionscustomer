@@ -53,8 +53,8 @@ $error-color: red;
       }
       .form_control{
         position: relative;
-        color: rgba(0, 0, 0, 0.50);
-        font-family: Inter;
+
+        font-family: 'Inter';
         font-size: 10px;
         font-style: normal;
         font-weight: 400;
@@ -90,15 +90,7 @@ $error-color: red;
         top: 50%;
       }
     }
-    /* Thiết lập các kiểu cho button */
-     .submit_register {
-      background-color: $primary-color;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-    }
-    /* Thiết lập các kiểu cho input[type="submit"] */
-    // input[type="submit"]
+   
     .button
   { 
     margin: 0 auto;
@@ -122,7 +114,10 @@ $error-color: red;
     input[type="text"] ,input[type="email"],input[type="password"]{
       flex: 1; /* Cho phép input mở rộng để lấp đầy khoảng trống còn lại */
       padding: 10px;
-      border: 2px solid #ccc;
+      // border: 2px solid #ccc;
+     border: 1px solid rgba(0, 0, 0, 0.50);
+
+
       border-radius: 5px;
     }
    

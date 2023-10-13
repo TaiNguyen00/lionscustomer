@@ -175,12 +175,6 @@ const Register = () => {
         </div>
         <div className={clsx(styles.form_group)}>
           <div className={clsx(styles.form_control)}>
-            {/* <input
-            className="submit_register"
-            type="submit"
-            name="submit"
-            value="Tạo tài khoản"
-          /> */}
             <button className={clsx(styles.button)}>tạo tài khoản</button>
           </div>
         </div>
