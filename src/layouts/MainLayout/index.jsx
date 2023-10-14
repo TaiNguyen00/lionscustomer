@@ -1,6 +1,11 @@
 import InnerContent from "~/components/InnerContent";
 import HeaderMain from "./HeaderMain";
-import RoomInfo from "../../components/Room";
+
+import Package from "~/components/Package/index";
+import Functional from "~/components/Functional/index";
+import TeamContact from "~/components/TeamContact";
+import ManageSolution from "~/components/ManageSolution";
+
 
 const Mainlayout = () => {
 
@@ -10,7 +15,10 @@ const Mainlayout = () => {
       <HeaderMain />
       <InnerContent>
         <h1>MainLayout</h1>
-        <RoomInfo />
+        <TeamContact />
+        <ManageSolution />
+        <Functional />
+        <Package />
       </InnerContent>
     </div>
   );

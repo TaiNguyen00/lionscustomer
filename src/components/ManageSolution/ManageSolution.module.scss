@@ -1,0 +1,76 @@
+@use "~/scss/" as *;
+
+  .manage_wrapper {
+    
+    background-color: #F4F9F9;
+    .wrapper_content{
+      min-height: 600px;
+      width: $innerContent-width-pc;
+      margin: 0 auto;
+      padding-top: 100px;
+      border-radius: 20px;
+      // 
+      display: flex;
+      justify-content: space-between;
+      @include mobile {
+        width: $innerContent-width-mobile;
+        flex-direction: column-reverse;
+        padding: 0;
+      }
+    
+      // LEFT_CONTENT
+      .left_content {
+        .content {
+          width: 500px;
+          
+          @include mobile {
+            width: $innerContent-width-mobile;
+            padding-left: 12px;
+          }
+          h2 {
+            font-weight: bold;
+            font-size: 2.4rem;
+            line-height: 4rem;
+
+            @include mobile {
+              font-size: 1.2rem;
+            }
+      
+          }
+          ul {
+            li {
+              font-size: 1.2rem;
+              padding: 12px 0;
+              color: #777777;
+              @include mobile {
+                font-size: 0.8rem;
+                padding-left: 12px;
+                line-height: 1rem;
+              }
+            }
+          }
+        }
+      }
+      
+    
+      // RIGHT_CONTENT
+      .right_content {
+        width: 500px;
+        height: 500px;
+        object-fit: cover;
+        background-repeat: no-repeat;
+        background-image: url("./src/assets//images/manage_solution.png");
+        @include mobile {
+          background-position: center;
+          width: $innerContent-width-mobile;
+          height: 300px;
+        }
+      }
+    
+    
+    }
+  }
+
+
+
+

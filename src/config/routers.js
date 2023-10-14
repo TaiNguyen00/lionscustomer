@@ -1,14 +1,19 @@
-import Mainlayout from "~/layouts/MainLayout";
+// import Mainlayout from "~/layouts/MainLayout";
 // import Login from "~/pages/AuthPage/Login";
 // import Register from "~/pages/AuthPage/Register";
 // import Page404 from "~/pages/AuthPage/404";
+
 import { LoginPage, RegisterPage } from "~/pages/AuthPage";
-import { Page404, Invoice, Payment, PaymentSuccess, ManageClient } from "~/pages";
+import { Page404, Invoice, Payment, Paymentfailure, PaymentSuccess, ManageClient } from "~/pages";
+
+import Home from "../pages/Home";
+
+
 const routers = [
   {
     id: 0,
     path: "/",
-    component: Mainlayout,
+    component: Home,
   },
   {
     id: 1,
@@ -17,7 +22,7 @@ const routers = [
   },
   {
     id: 2,
-    path: "/register",
+    path: "/Register",
     component: RegisterPage,
   },
   {
@@ -36,6 +41,7 @@ const routers = [
     component: Payment,
   },
   {
+
     id: 7,
     path: "/paymentSuccess",
     component: PaymentSuccess,
@@ -44,6 +50,12 @@ const routers = [
     id: 8,
     path: "/manageClient",
     component: ManageClient,
+  },
+  {
+    id: 6,
+    path: "/paymentfailure",
+    component: Paymentfailure,
+
   },
 ];
 export default routers;
