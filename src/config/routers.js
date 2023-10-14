@@ -3,7 +3,7 @@ import Mainlayout from "~/layouts/MainLayout";
 // import Register from "~/pages/AuthPage/Register";
 // import Page404 from "~/pages/AuthPage/404";
 import { LoginPage, RegisterPage } from "~/pages/AuthPage";
-import { Page404, Invoice, Payment } from "~/pages";
+import { Page404, Invoice, Payment, TestComponents } from "~/pages";
 import Home from "../pages/Home";
 const routers = [
   {
@@ -35,6 +35,14 @@ const routers = [
     id: 5,
     path: "/payment",
     component: Payment,
+  },
+  /*
+  case này để test components xoá trong tương lai
+  */
+  {
+    id: 6,
+    path: "/test",
+    component: TestComponents,
   },
 ];
 export default routers;
