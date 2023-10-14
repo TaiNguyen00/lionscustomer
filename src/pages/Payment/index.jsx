@@ -52,8 +52,8 @@ const Payment = () => {
           </div>
           <div className={clsx(styles.detail)}>
             <h2>Chi tiết thanh toán</h2>
-            <table >
-              <tr>
+            <table className={clsx(styles.table)} >
+              <tr className={clsx(styles.tr)}>
                 <td>STT</td>
                 <td>Số tiền</td>
                 <td>Gói</td>

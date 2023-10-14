@@ -64,8 +64,8 @@ const Invoice = () => {
         })}
       </div>
 
-      <table>
-        <tr>
+      <table className={clsx(styles.table)}>
+        <tr className={clsx(styles.tr)}>
           <td>Gói</td>
           <td>Số tiền</td>
 

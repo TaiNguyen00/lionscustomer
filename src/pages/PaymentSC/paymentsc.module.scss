@@ -52,30 +52,31 @@ $color: #FCBB3E;
 .alert {
     text-align: center;
     padding: 5px;
-}
 
-h2 {
-    font-size: 22px;
-
-
-    @include tablet {
-        font-size: 30px;
-        margin-bottom: 5px;
-    }
-
-    @include pc {
-        font-size: 40px;
-        margin-bottom: 5px;
-    }
-}
-
-p {
-    color: $color;
-
-    @include pc {
+    h2 {
         font-size: 22px;
+
+
+        @include tablet {
+            font-size: 30px;
+            margin-bottom: 5px;
+        }
+
+        @include pc {
+            font-size: 40px;
+            margin-bottom: 5px;
+        }
+    }
+
+    p {
+        color: $color;
+
+        @include pc {
+            font-size: 22px;
+        }
     }
 }
+
 
 .imgMN {
     position: absolute;
