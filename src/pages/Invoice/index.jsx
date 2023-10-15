@@ -66,14 +66,14 @@ const Invoice = () => {
 
       <table className={clsx(styles.table)}>
         <tr className={clsx(styles.tr)}>
-          <td>Gói</td>
-          <td>Số tiền</td>
+          <td className={clsx(styles.td)}>Gói</td>
+          <td className={clsx(styles.td)}>Số tiền</td>
 
 
         </tr>
         <tr>
-          <td>VIP</td>
-          <td>{formatNumber()}</td>
+          <td className={clsx(styles.td)}>VIP</td>
+          <td className={clsx(styles.td)}>{formatNumber()}</td>
 
 
         </tr>

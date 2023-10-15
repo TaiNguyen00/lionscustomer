@@ -174,20 +174,19 @@ input[type="button"] {
 }
 
 
-.detail>.table,
-tr,
-td {
+.table,
+.tr {
     margin: 0 auto;
-    border: 1px solid black;
     border-collapse: collapse;
     width: 100%;
 }
 
 
-table>tr>td {
+.table>tr>td {
     padding: 10px;
     text-align: center;
-    width: 33.33%;
+    width: 33.3%;
+    border: 1px solid black;
 }
 
 table>.tr {
