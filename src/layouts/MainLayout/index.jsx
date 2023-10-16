@@ -6,10 +6,7 @@ import Functional from "~/components/Functional/index";
 import TeamContact from "~/components/TeamContact";
 import ManageSolution from "~/components/ManageSolution";
 
-
 const Mainlayout = () => {
-
-
   return (
     <div>
       <HeaderMain />

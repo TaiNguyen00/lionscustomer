@@ -4,10 +4,16 @@
 // import Page404 from "~/pages/AuthPage/404";
 
 import { LoginPage, RegisterPage } from "~/pages/AuthPage";
-import { Page404, Invoice, Payment, Paymentfailure, PaymentSuccess, ManageClient } from "~/pages";
+import {
+  Page404,
+  Invoice,
+  Payment,
+  Paymentfailure,
+  PaymentSuccess,
+  ManageClient,
+} from "~/pages";
 
 import Home from "../pages/Home";
-
 
 const routers = [
   {
@@ -44,10 +50,8 @@ const routers = [
     id: 6,
     path: "/paymentfailure",
     component: Paymentfailure,
-
   },
   {
-
     id: 7,
     path: "/paymentSuccess",
     component: PaymentSuccess,
