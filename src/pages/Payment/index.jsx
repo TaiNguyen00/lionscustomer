@@ -2,14 +2,24 @@ import { clsx } from 'clsx';
 import styles from './payment.module.scss';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 // import momo from '../../../assets/images/momo.png';
-import bank from '../../assets/images/bank.png';
-import QR from '../../assets/images/7.png'
+import bank from '~/assets/images/bank.png';
+import QR from '~/assets/images/7.png'
 
 const Payment = () => {
+  const number = 5000000;
+  const formatNumber = () => {
+    const formatter = new Intl.NumberFormat('vi-VN', {
+      style: 'currency',
+      currency: 'VND',
+    });
+    const formattedNumber = formatter.format(number);
+
+    return formattedNumber;
+  }
   const users = [
     {
       name: "Nguyễn Văn A",
-      clientCode: "A1234"
+      clientCode: "A1234",
     }
   ]
   return (
@@ -22,18 +32,16 @@ const Payment = () => {
           <div className={clsx(styles.inforUser)}>
             <h2>Thông tin khách hàng</h2>
             <div className={clsx(styles.inforuser)}>
-              <div className={clsx(styles.infor)}>
-                <h3>Tên:</h3>
-                <h3>Mã khách hàng:</h3>
-                <h3>Tổng tiền thanh toán:</h3>
-              </div>
               {
                 users.map((user) => {
                   return (
                     <div className={clsx(styles.user)} key={user.clientCode}>
-                      <p>{user.name}</p>
-                      <p>{user.clientCode}</p>
-                      <p>5.000.000vnđ</p>
+                      <p><b>Tên:</b> {user.name}</p>
+                      <p><b>Mã khách hàng: </b>  {user.clientCode}</p>
+                      <p>
+                        <b>
+                          Tổng tiền thanh toán:
+                        </b>{formatNumber()}</p>
                     </div>
                   );
                 })
@@ -44,17 +52,20 @@ const Payment = () => {
           </div>
           <div className={clsx(styles.detail)}>
             <h2>Chi tiết thanh toán</h2>
-            <table >
-              <tr>
-                <td>STT</td>
-                <td>Số tiền</td>
-                <td>Gói</td>
+            <table className={clsx(styles.table)} >
+              <tr className={clsx(styles.tr)}>
+                <td className={clsx(styles.td)}>STT</td>
+                <td className={clsx(styles.td)}>Số tiền</td>
+                <td className={clsx(styles.td)}>Gói</td>
 
               </tr>
               <tr>
-                <td>1</td>
-                <td>5.000.000đ</td>
-                <td>VIP</td>
+                <td className={clsx(styles.td)}>1</td>
+                <td className={clsx(styles.td)}>{formatNumber(
+
+
+                )}</td>
+                <td className={clsx(styles.td)}>VIP</td>
 
               </tr>
 
