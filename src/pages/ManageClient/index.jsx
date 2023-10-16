@@ -93,6 +93,46 @@ const ManageClient = () => {
             package: '3tháng',
             status: 'hoạt động',
         },
+        {
+            stt: 1,
+            mkh: 2345,
+            name: "Nguyễn Văn A",
+            nameHotel: "Văn A Hotel",
+            email: "nguyenvana@gmail.com",
+            phoneNumber: "012345687",
+            package: '3tháng',
+            status: 'hoạt động',
+        },
+        {
+            stt: 2,
+            mkh: 2545,
+            name: "Nguyễn Văn A",
+            nameHotel: "Văn A Hotel",
+            email: "nguyenvana@gmail.com",
+            phoneNumber: "012345687",
+            package: '3tháng',
+            status: 'hoạt động',
+        },
+        {
+            stt: 3,
+            mkh: 2346,
+            name: "Nguyễn Văn A",
+            nameHotel: "Văn A Hotel",
+            email: "nguyenvana@gmail.com",
+            phoneNumber: "012345687",
+            package: '3tháng',
+            status: 'hoạt động',
+        },
+        {
+            stt: 4,
+            mkh: 2547,
+            name: "Nguyễn Văn A",
+            nameHotel: "Văn A Hotel",
+            email: "nguyenvana@gmail.com",
+            phoneNumber: "012345687",
+            package: '3tháng',
+            status: 'hoạt động',
+        },
 
     ]
     return (
@@ -171,6 +211,7 @@ const ManageClient = () => {
                                 </TableBody>
                             </Table>
                         </TableContainer>
+
                         <TablePagination
                             rowsPerPageOptions={[5, 10, 15]}
                             rowsPerPage={rowperpage}

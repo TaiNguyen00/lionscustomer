@@ -41,6 +41,12 @@ const routers = [
     component: Payment,
   },
   {
+    id: 6,
+    path: "/paymentfailure",
+    component: Paymentfailure,
+
+  },
+  {
 
     id: 7,
     path: "/paymentSuccess",
@@ -50,12 +56,6 @@ const routers = [
     id: 8,
     path: "/manageClient",
     component: ManageClient,
-  },
-  {
-    id: 6,
-    path: "/paymentfailure",
-    component: Paymentfailure,
-
   },
 ];
 export default routers;

@@ -1,110 +1,157 @@
 @use "~/scss/" as *;
-$bg: #D9D9D9;
+$cl: #FFFFFF;
 $color: #FCBB3E;
+$button: #2E7D32;
+$border: #D9D9D9;
+$bluecolor: #195B97;
+$bg-cl: #F4F9F9;
 
-
-.imgTF {
-    text-align: center;
-    margin-top: 15px;
-    margin-bottom: 45px;
-
-    @include pc {
-        margin: 65px 0;
-        width: 100%;
-    }
-
+//
+.container {
+    padding-top: 20px;
+    width: 100%;
+    height: 100vh;
+    background-color: $bg-cl;
 }
 
-.imgTF img {
-    width: 280px;
-    margin: 0 auto;
+.status {
+    .back1 {
+        display: flex;
+        align-items: center;
 
-    @include tablet {
-        width: 450px;
+        svg {
+            margin-left: 30px;
+        }
+
+        h1 {
+            margin: 0 auto;
+        }
     }
 
-    @include pc {
-        width: 500px;
-    }
-}
-
-.content {
-    width: 350px;
-    height: 110px;
-    margin: 0 auto;
-    background-color: #d9d9d9;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    @include tablet {
-        width: 650px;
-        height: 200px;
+    p,
+    h2 {
+        text-align: center;
+        margin: 20px 0;
     }
 
-    @include pc {
-        width: 1000px;
-        height: 200px;
+    p:last-child {
+        color: $color;
     }
-}
-
-.alert {
-    text-align: center;
-    padding: 5px;
 
     h2 {
-        font-size: 22px;
-
-
-        @include tablet {
-            font-size: 30px;
-            margin-bottom: 5px;
-        }
-
-        @include pc {
-            font-size: 40px;
-            margin-bottom: 5px;
-        }
+        width: 535px;
+        height: 80px;
+        color: $cl;
+        background-color: $button;
+        line-height: 80px;
+        border-radius: 8px;
+        margin: 0 auto;
     }
 
-    p {
-        color: $color;
+}
 
-        @include pc {
+//
+
+.inforPayment {
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    a {
+        p {
+            text-align: center;
+            margin: 20px 0;
+            color: $bluecolor;
+        }
+    }
+}
+
+.row {
+
+
+    @include tablet {
+        display: flex;
+        flex-direction: column;
+    }
+
+    @include pc {
+        width: 95%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.inforUser {
+    border: 1px solid $border;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px auto;
+
+    @include tablet {
+        width: 70%;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+
+    @include pc {
+        width: 35%;
+        margin-right: 20px;
+        margin-bottom: 0;
+    }
+
+    h2 {
+        color: $bluecolor;
+        margin-bottom: 30px;
+    }
+
+    .user {
+        margin-left: 30px;
+
+        p {
             font-size: 22px;
         }
     }
+
+
 }
 
-
-.imgMN {
-    position: absolute;
-    top: 260px;
-    right: 15px;
+.detail {
+    border: 1px solid $border;
+    border-radius: 5px;
+    padding: 10px;
 
     @include tablet {
-        top: 370px;
-        right: 30px;
+        width: 90%;
+        margin: 0 auto;
     }
 
     @include pc {
-        top: 415px;
-        right: 110px;
+        width: 65%;
     }
 
-    img {
-        width: 120px;
-        height: 90px;
-
-        @include tablet {
-            width: 215px;
-            height: 155px;
-        }
-
-        @include pc {
-            width: 290px;
-            height: 220px;
-        }
+    h2 {
+        color: $bluecolor;
+        margin-bottom: 30px;
     }
+}
+
+.table,
+.tr {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+
+.table>tr>td {
+    padding: 10px;
+    text-align: center;
+    width: 33.3%;
+    border: 1px solid black;
+}
+
+table>.tr {
+    background-color: $bluecolor;
 }
