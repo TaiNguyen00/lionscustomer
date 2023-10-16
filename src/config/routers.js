@@ -1,7 +1,7 @@
-import Mainlayout from "~/layouts/MainLayout";
 // import Login from "~/pages/AuthPage/Login";
 // import Register from "~/pages/AuthPage/Register";
 // import Page404 from "~/pages/AuthPage/404";
+import Mainlayout from "~/layouts/MainLayout";
 import { LoginPage, RegisterPage } from "~/pages/AuthPage";
 import { Page404, Invoice, Payment, TestComponents } from "~/pages";
 import Home from "../pages/Home";
@@ -43,6 +43,13 @@ const routers = [
     id: 6,
     path: "/test",
     component: TestComponents,
+  },
+
+  // case này dùng để code component
+  {
+    id: 7,
+    path: "/component",
+    component: Mainlayout,
   },
 ];
 export default routers;

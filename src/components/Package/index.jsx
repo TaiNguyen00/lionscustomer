@@ -13,6 +13,7 @@ import "swiper/css/scrollbar";
 import CheckIcon from "@mui/icons-material/Check";
 // Import Swiper styles
 import "swiper/css";
+import PackageComponent from "../PackageComponent";
 
 const Package = () => {
   // format number
@@ -91,7 +92,6 @@ const Package = () => {
         },
       ],
       isFreeBtn: false, // Đặt giá trị boolean ở đây, ví dụ: true
-
       // Đặt giá trị boolean ở đây, ví dụ: true
     },
     {
@@ -133,7 +133,7 @@ const Package = () => {
         },
       ],
       isFreeBtn: false, // Đặt giá trị boolean ở đây, ví dụ: true
-
+      isEdit: true
       // Đặt giá trị boolean ở đây, ví dụ: true
     },
   ];
@@ -149,54 +149,7 @@ const Package = () => {
           </div>
           <div className={clsx(style.container)}>
             {Packager.map((pk, inx) => (
-              <div className={clsx(style.package)} key={inx}>
-                <h2 className={clsx(style.title)}>{pk.title}</h2>
-                {pk.oldPrice ? (
-                  <h3 className={clsx(style.oldPrice)}>
-                    {VND.format(pk.oldPrice)}
-                  </h3>
-                ) : (
-                  ""
-                )}
-                {pk.price ? (
-                  <h3 className={clsx(style.newPrice)}>
-                    {VND.format(pk.price)}{" "}
-                    <span style={{ color: "#000", fontSize: "1rem" }}>
-                      / Tháng
-                    </span>
-                  </h3>
-                ) : (
-                  ""
-                )}
-                {pk.price ? (
-                  <div style={{ display: "flex", alignItems: "center" }}>
-                    <span className={clsx(style.discount)}>Giảm 50%</span>
-                  </div>
-                ) : (
-                  ""
-                )}
-                {pk.options
-                  ? pk.options.map(
-                    (
-                      item,
-                      index // Thay đổi 'limit' thành 'options'
-                    ) => (
-                      <div className={clsx(style.package_info)} key={index}>
-                        <span>
-                          {item.iCon}
-                          {item.titleOption}
-                        </span>
-                        <li className={clsx(style.package_info_text)}>
-                          {item.descOption.label}{" "}
-                          {item.descOption.quantityRoom}
-                        </li>
-                        {/* Tiếp tục thêm các mục khác ở đây nếu cần */}
-                      </div>
-                    )
-                  )
-                  : null}
-                <ButtonPackage Packager={pk} />
-              </div>
+              <PackageComponent inx={inx} pk={pk} />
             ))}
           </div>
         </div>
@@ -222,54 +175,7 @@ const Package = () => {
           >
             {Packager.map((pk, inx) => (
               <SwiperSlide className={clsx(style.swiper)} key={inx}>
-                <div className={clsx(style.package)}>
-                  <h2 className={clsx(style.title)}>{pk.title}</h2>
-                  {pk.oldPrice ? (
-                    <h3 className={clsx(style.oldPrice)}>
-                      {VND.format(pk.oldPrice)}
-                    </h3>
-                  ) : (
-                    ""
-                  )}
-                  {pk.price ? (
-                    <h3 className={clsx(style.newPrice)}>
-                      {VND.format(pk.price)}{" "}
-                      <span style={{ color: "#000", fontSize: "1rem" }}>
-                        / Tháng
-                      </span>
-                    </h3>
-                  ) : (
-                    ""
-                  )}
-                  {pk.price ? (
-                    <div style={{ display: "flex", alignItems: "center" }}>
-                      <span className={clsx(style.discount)}>Giảm 50%</span>
-                    </div>
-                  ) : (
-                    ""
-                  )}
-                  {pk.options
-                    ? pk.options.map(
-                      (
-                        item,
-                        index // Thay đổi 'limit' thành 'options'
-                      ) => (
-                        <div className={clsx(style.package_info)} key={index}>
-                          <span>
-                            {item.iCon}
-                            {item.titleOption}
-                          </span>
-                          <li className={clsx(style.package_info_text)}>
-                            {item.descOption.label}{" "}
-                            {item.descOption.quantityRoom}
-                          </li>
-                          {/* Tiếp tục thêm các mục khác ở đây nếu cần */}
-                        </div>
-                      )
-                    )
-                    : null}
-                  <ButtonPackage Packager={pk} />
-                </div>
+                <PackageComponent pk={pk} />
               </SwiperSlide>
             ))}
           </Swiper>

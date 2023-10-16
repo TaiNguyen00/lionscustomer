@@ -1,65 +1,5 @@
 @use "~/scss/" as *;
 
-.package_wrapper {
-
-    background-image: url("../../assets//images/bgPac_pc.png");
-
-    .overLay {
-        background-color: rgba(255, 255, 255, 0.4);
-        -webkit-backdrop-filter: blur(5px);
-        backdrop-filter: blur(1px);
-        width: 100%;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-    }
-
-    @include mobile {
-        display: none;
-    }
-
-    .container {
-        @include tablet {}
-
-        @include pc {
-            min-height: 755px;
-            background-repeat: no-repeat;
-            width: $innerContent-width-pc;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 45px;
-            align-items: center;
-
-
-        }
-    }
-}
-
-// fig cung wight
-.container_mobie {
-    display: block;
-    width: $innerContent-width-mobile;
-    min-height: 800px;
-    background-image: url("../../assets//images/bgPackage.png");
-    padding: 0 10px;
-    align-items: center;
-
-    .content_swipper {
-        .swiper-pagination {
-            margin-top: 500px;
-        }
-    }
-
-    @include tablet {}
-
-    @include pc {
-        display: none;
-    }
-
-
-}
 
 .package {
     width: 300px;
@@ -143,6 +83,20 @@
     }
 
 
+}
+
+.package_title {
+    position: relative;
+
+    button {
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin: 20px 20px 0 0;
+        background-color: #FFFFFF;
+        border: none;
+        cursor: pointer;
+    }
 }
 
 .title {
@@ -275,103 +229,5 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         bottom: 30px;
-    }
-}
-
-.more_option {
-    width: 300px;
-    height: 100px;
-    background-color: #195B97;
-    text-align: center;
-    border-radius: 20px;
-    color: #F4F2DE;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    margin-left: 34px;
-    margin-bottom: 40px;
-
-    @include pc {
-        width: 1036px;
-        height: 217px;
-    }
-
-    h2 {
-        @include pc {
-            width: 400px;
-            font-size: 2rem;
-            color: #fff;
-        }
-    }
-
-    button {
-        margin-top: 12px;
-        padding: 12px 20px;
-        background-color: #008E6F;
-        color: #F4F2DE;
-        outline: none;
-        border: none;
-        border-radius: 20px;
-        font-size: 1rem;
-
-        @include pc {
-            font-size: 1.4rem;
-            padding: 12px 60px;
-            cursor: pointer;
-        }
-    }
-}
-
-.button_buy {
-    min-height: 40px;
-    min-width: 140px;
-    font-size: 17px;
-    font-weight: 700;
-    font-family: Arial, Helvetica, sans-serif;
-    border-radius: 40px;
-    cursor: pointer;
-    color: white;
-    background-color: #195B97;
-
-    @include tablet {}
-
-    @include pc {
-        min-height: 40px;
-        min-width: 140px;
-        font-size: 17px;
-        font-weight: 700;
-        font-family: Arial, Helvetica, sans-serif;
-        border: 2.5px solid #7C9D96;
-
-        border-radius: 20px;
-    }
-}
-
-.button_seemode {
-    min-height: 30px;
-    min-width: 140px;
-    cursor: pointer;
-
-    font-size: 14px;
-    font-weight: 700;
-    font-family: Arial, Helvetica, sans-serif;
-    border-radius: 40px;
-    color: white;
-    background-color: #008E6F;
-
-    @include tablet {}
-
-    @include pc {
-        min-height: 40px;
-        min-width: 140px;
-        font-size: 17px;
-        font-weight: 700;
-        font-family: Arial, Helvetica, sans-serif;
-        border-radius: 20px;
-        color: white;
-        border: 2.5px solid #7C9D96;
-        background-color: #008E6F;
     }
 }

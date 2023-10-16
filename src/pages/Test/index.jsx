@@ -31,6 +31,7 @@ const DataInputUseForProject = [
 ];
 const TestPage = () => {
   const { handleSubmit, control } = useForm();
+  console.log(control);
   const getValue = (data) => {
     console.log(data);
   };
@@ -50,10 +51,10 @@ const TestPage = () => {
           How to get data Form when click submit not use useState
         </Typography> */}
         <form onSubmit={handleSubmit(getValue)}>
-          <InputCustom name="lastName" control={control} />
+          <InputCustom name="lastname" label="name abc" control={control} />
           <InputCustom name="register" control={control} />
-          <InputCustom name="age" control={control} />
-          <Button variant="contained" type="submit">
+          <InputCustom name="age" size='large' control={control} />
+          <Button variant="outlined" type="submit">
             Get Values
           </Button>
         </form>
