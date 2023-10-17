@@ -7,6 +7,16 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Invoice = () => {
+  const number = 5000000;
+  const formatNumber = () => {
+    const formatter = new Intl.NumberFormat('vi-VN', {
+      style: 'currency',
+      currency: 'VND',
+    });
+    const formattedNumber = formatter.format(number);
+
+    return formattedNumber;
+  }
   const users = [
     {
       name: "Nguyễn Văn A",
@@ -48,22 +58,22 @@ const Invoice = () => {
             <div className={clsx(styles.user)} key={user.clientCode}>
               <p>{user.name}</p>
               <p>{user.clientCode}</p>
-              <p>5.000.000vnđ</p>
+              <p>{formatNumber()}</p>
             </div>
           );
         })}
       </div>
 
-      <table>
-        <tr>
-          <td>Gói</td>
-          <td>Số tiền</td>
+      <table className={clsx(styles.table)}>
+        <tr className={clsx(styles.tr)}>
+          <td className={clsx(styles.td)}>Gói</td>
+          <td className={clsx(styles.td)}>Số tiền</td>
 
 
         </tr>
         <tr>
-          <td>VIP</td>
-          <td>5.000.000đ</td>
+          <td className={clsx(styles.td)}>VIP</td>
+          <td className={clsx(styles.td)}>{formatNumber()}</td>
 
 
         </tr>
@@ -72,7 +82,7 @@ const Invoice = () => {
 
       <div className={clsx(styles.total)}>
         <p>Tổng tiền phải thanh toán:</p>
-        <h2>5.000.000 vnđ</h2>
+        <h2>{formatNumber()}</h2>
       </div>
 
       <div className={clsx(styles.pay)}>

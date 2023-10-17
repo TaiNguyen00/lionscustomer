@@ -5,6 +5,7 @@ $border: #D9D9D9;
 
 .container {
     background-color: $maincolor;
+
 }
 
 .header {
@@ -19,6 +20,8 @@ $border: #D9D9D9;
 }
 
 .row {
+
+
     @include tablet {
         display: flex;
         flex-direction: column;
@@ -34,9 +37,10 @@ $border: #D9D9D9;
     border: 1px solid $border;
     border-radius: 5px;
     padding: 10px;
+    margin: 10px auto;
 
     @include tablet {
-        width: 80%;
+        width: 70%;
         margin: 0 auto;
         margin-bottom: 10px;
     }
@@ -162,39 +166,29 @@ input[type="button"] {
     margin-bottom: 10px;
 }
 
-.inforuser {
-    display: flex;
-}
 
-.infor {
-    margin: 10px;
-}
 
 .user {
     margin: 10px;
     font-size: 19px;
 }
 
-.user p:last-child {
-    font-weight: bold;
-}
 
-.detail>table,
-tr,
-td {
+.table,
+.tr {
     margin: 0 auto;
-    border: 1px solid black;
     border-collapse: collapse;
     width: 100%;
 }
 
 
-table>tr>td {
+.table>tr>td {
     padding: 10px;
     text-align: center;
-    width: 33.33%;
+    width: 33.3%;
+    border: 1px solid black;
 }
 
-table>tr:first-child {
+table>.tr {
     background-color: $bluecolor;
 }

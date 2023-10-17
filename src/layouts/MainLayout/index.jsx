@@ -1,6 +1,6 @@
 import InnerContent from "~/components/InnerContent";
 import HeaderMain from "./HeaderMain";
-
+  
 
 const Mainlayout = () => {
   return (

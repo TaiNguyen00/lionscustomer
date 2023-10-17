@@ -1,3 +1,4 @@
+
 // import Login from "~/pages/AuthPage/Login";
 // import Register from "~/pages/AuthPage/Register";
 // import Page404 from "~/pages/AuthPage/404";
@@ -6,6 +7,7 @@ import { LoginPage, RegisterPage } from "~/pages/AuthPage";
 import { Page404, Invoice, Payment, TestComponents } from "~/pages";
 import Home from "../pages/Home";
 import TestComponen from "~/layouts/TestComponent";
+
 const routers = [
   {
     id: 0,
@@ -19,7 +21,7 @@ const routers = [
   },
   {
     id: 2,
-    path: "/register",
+    path: "/Register",
     component: RegisterPage,
   },
   {
@@ -37,6 +39,7 @@ const routers = [
     path: "/payment",
     component: Payment,
   },
+
   /*
   case này để test components xoá trong tương lai
   */
@@ -51,6 +54,7 @@ const routers = [
     id: 7,
     path: "/testcomponent",
     component: TestComponen,
+
   },
 ];
 export default routers;
