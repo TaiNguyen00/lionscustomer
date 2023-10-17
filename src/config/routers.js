@@ -5,6 +5,7 @@ import Mainlayout from "~/layouts/MainLayout";
 import { LoginPage, RegisterPage } from "~/pages/AuthPage";
 import { Page404, Invoice, Payment, TestComponents } from "~/pages";
 import Home from "../pages/Home";
+import TestComponen from "~/layouts/TestComponent";
 const routers = [
   {
     id: 0,
@@ -48,8 +49,8 @@ const routers = [
   // case này dùng để code component
   {
     id: 7,
-    path: "/component",
-    component: Mainlayout,
+    path: "/testcomponent",
+    component: TestComponen,
   },
 ];
 export default routers;

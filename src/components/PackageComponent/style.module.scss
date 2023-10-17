@@ -121,14 +121,15 @@
 .package_info {
     width: 80%;
     margin: 0 auto;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr;
     align-items: center;
-
     padding: 0 12px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 
     span {
         font-size: 1.2rem;
+        margin-bottom: 10px;
     }
 
     @include tablet {}
@@ -140,11 +141,9 @@
 
 .package_info_text {
     text-decoration: solid;
-    margin-bottom: 5px;
     padding-left: 24px;
     line-height: 1.4rem;
     font-size: 1rem;
-    margin-top: 5px;
 
     @include tablet {}
 
@@ -152,82 +151,6 @@
 
     @include pc {
         text-decoration: solid;
-        margin-bottom: 5px;
         list-style: none;
-    }
-}
-
-.package_limit {
-
-    margin-top: 5px;
-    list-style: none;
-    text-decoration: line-through;
-
-    @include tablet {}
-
-    @include pc {
-        margin-top: 5px;
-        list-style: none;
-        text-decoration: line-through;
-    }
-}
-
-// button package
-.button_package {
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-
-    @include tablet {}
-
-    @include pc {
-        display: flex;
-        justify-content: center;
-    }
-}
-
-.button_free {
-    min-height: 30px;
-    min-width: 130px;
-    font-size: 17px;
-    font-weight: 700;
-    font-family: Arial, Helvetica, sans-serif;
-    border-radius: 40px;
-    background-color: #A4EBF3;
-    position: absolute;
-    bottom: 50px;
-    cursor: pointer;
-
-
-    @include tablet {}
-
-    @include pc {
-        min-height: 40px;
-        min-width: 170px;
-        font-size: 17px;
-        font-weight: 700;
-        font-family: Arial, Helvetica, sans-serif;
-        border-radius: 20px;
-        border: 2.5px solid #195B97;
-        background-color: #A4EBF3;
-        position: absolute;
-        bottom: 50px;
-    }
-}
-
-.button_group {
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    bottom: 30px;
-    margin-bottom: 35px;
-
-    @include tablet {}
-
-    @include pc {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        bottom: 30px;
     }
 }
