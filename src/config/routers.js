@@ -1,19 +1,15 @@
-// import Mainlayout from "~/layouts/MainLayout";
-// import Login from "~/pages/AuthPage/Login";
-// import Register from "~/pages/AuthPage/Register";
-// import Page404 from "~/pages/AuthPage/404";
 
 import { LoginPage, RegisterPage } from "~/pages/AuthPage";
+import Home from "../pages/Home";
 import {
   Page404,
   Invoice,
   Payment,
   Paymentfailure,
   PaymentSuccess,
-  ManageClient,
+  ManageClient
 } from "~/pages";
-
-import Home from "../pages/Home";
+import TestComponent from "~/layouts/TestComponent";
 
 const routers = [
   {
@@ -46,18 +42,28 @@ const routers = [
     path: "/payment",
     component: Payment,
   },
+
+
+
+  // case này dùng để code component
   {
     id: 6,
+    path: "/testcomponent",
+    component: TestComponent,
+
+  },
+  {
+    id: 7,
     path: "/paymentfailure",
     component: Paymentfailure,
   },
   {
-    id: 7,
+    id: 8,
     path: "/paymentSuccess",
     component: PaymentSuccess,
   },
   {
-    id: 8,
+    id: 9,
     path: "/manageClient",
     component: ManageClient,
   },

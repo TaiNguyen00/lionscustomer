@@ -1,0 +1,37 @@
+@use "~/scss/" as *;
+
+.body {
+    width: 390;
+    min-height: 126px;
+    background-image: url('../../assets/images/image\ 14.png');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+
+    h2 {
+        max-width: 237px;
+        font-size: 16px;
+        color: #ffff;
+        text-align: center;
+        font-weight: 500;
+    }
+
+    @include pc {
+        width: 100%;
+        min-height: 335px;
+        background-image: url('../../assets/images/image\ 14.png');
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-size: cover;
+
+        h2 {
+            max-width: 666px;
+            font-size: 40px;
+            color: #ffff;
+            text-align: center;
+            font-weight: 500;
+        }
+    }
+}
