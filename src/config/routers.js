@@ -1,10 +1,6 @@
 
-// import Login from "~/pages/AuthPage/Login";
-// import Register from "~/pages/AuthPage/Register";
-// import Page404 from "~/pages/AuthPage/404";
 import { LoginPage, RegisterPage } from "~/pages/AuthPage";
 import Home from "../pages/Home";
-import TestComponen from "~/layouts/TestComponent";
 import {
   Page404,
   Invoice,
@@ -13,6 +9,7 @@ import {
   PaymentSuccess,
   ManageClient
 } from "~/pages";
+import TestComponent from "~/layouts/TestComponent";
 
 const routers = [
   {
@@ -52,7 +49,7 @@ const routers = [
   {
     id: 6,
     path: "/testcomponent",
-    component: TestComponen,
+    component: TestComponent,
 
   },
   {

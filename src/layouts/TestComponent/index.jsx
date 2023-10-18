@@ -5,19 +5,21 @@ import Package from "~/components/Package/index";
 import Functional from "~/components/Functional/index";
 import TeamContact from "~/components/TeamContact";
 import ManageSolution from "~/components/ManageSolution";
-import Banner from '~/components/Banner';
-const TestComponen = () => {
+const TestComponent = () => {
     return (
         <div>
-            <Banner />
             <InnerContent>
+                <h1>
+                    danh cho trang home
+                </h1>
                 <Functional />
                 <Package />
                 <TeamContact />
                 <ManageSolution />
+                <h1>//////////////////</h1>
             </InnerContent>
         </div>
     )
 }
 
-export default TestComponen
+export default TestComponent
