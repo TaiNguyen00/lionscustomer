@@ -2,11 +2,17 @@
 // import Login from "~/pages/AuthPage/Login";
 // import Register from "~/pages/AuthPage/Register";
 // import Page404 from "~/pages/AuthPage/404";
-import Mainlayout from "~/layouts/MainLayout";
 import { LoginPage, RegisterPage } from "~/pages/AuthPage";
-import { Page404, Invoice, Payment, TestComponents } from "~/pages";
 import Home from "../pages/Home";
 import TestComponen from "~/layouts/TestComponent";
+import {
+  Page404,
+  Invoice,
+  Payment,
+  Paymentfailure,
+  PaymentSuccess,
+  ManageClient
+} from "~/pages";
 
 const routers = [
   {
@@ -40,21 +46,29 @@ const routers = [
     component: Payment,
   },
 
-  /*
-  case này để test components xoá trong tương lai
-  */
-  {
-    id: 6,
-    path: "/test",
-    component: TestComponents,
-  },
+
 
   // case này dùng để code component
   {
-    id: 7,
+    id: 6,
     path: "/testcomponent",
     component: TestComponen,
 
+  },
+  {
+    id: 7,
+    path: "/paymentfailure",
+    component: Paymentfailure,
+  },
+  {
+    id: 8,
+    path: "/paymentSuccess",
+    component: PaymentSuccess,
+  },
+  {
+    id: 9,
+    path: "/manageClient",
+    component: ManageClient,
   },
 ];
 export default routers;
