@@ -6,7 +6,7 @@ const Banner = () => {
     return (
         <div className={clsx(style.body)}>
             <h2 >Quản lý khách sạn của bạn của bạn một cách dễ dàng</h2>
-        </div>
+        </div >
     )
 }
 

@@ -1,0 +1,99 @@
+@use "~/scss/" as *;
+
+.navigation_wrapper {
+  height: 107px;
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: $innerContent-width-mobile;
+    height: 100%;
+    padding: 10px;
+
+    @include pc {
+      width: $innerContent-width-pc;
+      margin: 0 auto;
+    }
+
+    // FOR MOBILE
+    .menu {
+      flex: 1;
+
+      @include pc {
+        display: none;
+      }
+
+      cursor: pointer;
+
+      .menuIcon {
+        margin-top: 40px;
+
+        @include pc {
+          display: none;
+        }
+      }
+    }
+
+
+
+    .logo {
+      flex: 1;
+      margin-right: 20px;
+
+      @include pc {
+        flex: none;
+        margin-right: 0;
+      }
+    }
+
+    // MENU-CONTENT FOR PC 
+    .menuContent {
+
+      @include mobile {
+        display: none;
+      }
+
+      .menuList {
+        display: flex;
+        gap: 40px;
+
+        li {
+          a {
+            color: #000;
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+
+    .user_info {
+      .user_infoOption {
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+        margin-top: 20px;
+        position: relative;
+
+        @include pc {
+          margin-top: 0;
+          padding: 0 20px;
+
+          h2 {
+            font-size: 16px;
+          }
+        }
+
+        img {
+          margin-right: 25px;
+        }
+
+        .dropDown {
+          position: absolute;
+          right: 0;
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+}
