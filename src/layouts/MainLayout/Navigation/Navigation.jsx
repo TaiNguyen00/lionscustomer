@@ -43,7 +43,7 @@ const Navigation = () => {
         <div className={clsx(style.user_info)}>
           <div className={clsx(style.user_infoOption)}>
             <img src={img_avatar} alt="" />
-            <h2>Hi,Trung</h2>
+            <h2 className={clsx(style.nameUser)}>Hi,Trung</h2>
             <div className={clsx(style.dropDown)}>
               <ExpandMoreIcon />
             </div>

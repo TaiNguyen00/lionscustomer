@@ -1,21 +1,47 @@
-
 import { LoginPage, RegisterPage } from "~/pages/AuthPage";
-import Home from "../pages/Home";
+import Mainlayout from "../layouts/MainLayout";
 import {
   Page404,
   Invoice,
   Payment,
   Paymentfailure,
   PaymentSuccess,
-  ManageClient
+  ManageClient,
+  Home,
 } from "~/pages";
 import TestComponent from "~/layouts/TestComponent";
-
 const routers = [
   {
     id: 0,
     path: "/",
-    component: Home,
+    component: Mainlayout,
+    childPath: [
+      {
+        id: 0,
+        path: "/",
+        childComponent: Home,
+      },
+      {
+        id: 1,
+        path: "/invoice",
+        childComponent: Invoice
+      },
+      {
+        id: 2,
+        path: "/payment",
+        childComponent: Payment
+      },
+      {
+        id: 3,
+        path: "/paymentfailure",
+        childComponent: Paymentfailure
+      },
+      {
+        id: 4,
+        path: "/paymentSuccess",
+        childComponent: PaymentSuccess
+      }
+    ],
   },
   {
     id: 1,
@@ -32,35 +58,12 @@ const routers = [
     path: "*",
     component: Page404,
   },
-  {
-    id: 4,
-    path: "/invoice",
-    component: Invoice,
-  },
-  {
-    id: 5,
-    path: "/payment",
-    component: Payment,
-  },
-
-
 
   // case này dùng để code component
   {
     id: 6,
     path: "/testcomponent",
     component: TestComponent,
-
-  },
-  {
-    id: 7,
-    path: "/paymentfailure",
-    component: Paymentfailure,
-  },
-  {
-    id: 8,
-    path: "/paymentSuccess",
-    component: PaymentSuccess,
   },
   {
     id: 9,

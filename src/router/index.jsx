@@ -5,6 +5,15 @@ const Router = () => (
   <React.Suspense>
     <Routes>
       {routers.map((route) => {
+        if (route.childPath) {
+          const ParenComponent = route.component;
+          return <Route path={route.path} element={<ParenComponent />} key={route.id}>
+            {route.childPath.map((childRoute) => {
+              const ChildComponent = childRoute.childComponent
+              return <Route path={childRoute.path} element={<ChildComponent />} key={childRoute.id}/>
+            })}
+          </Route>;
+        }
         const Page = route.component;
         return <Route key={route.id} path={route.path} element={<Page />} />;
       })}

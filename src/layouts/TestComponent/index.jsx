@@ -16,7 +16,7 @@ const TestComponent = () => {
                 <Package />
                 <TeamContact />
                 <ManageSolution />
-                <h1>//////////////////</h1>
+            
             </InnerContent>
         </div>
     )

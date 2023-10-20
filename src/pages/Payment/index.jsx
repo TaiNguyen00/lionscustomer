@@ -1,7 +1,6 @@
 import { clsx } from 'clsx';
 import styles from './payment.module.scss';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
-// import momo from '../../../assets/images/momo.png';
 import bank from '~/assets/images/bank.png';
 import QR from '~/assets/images/7.png'
 
