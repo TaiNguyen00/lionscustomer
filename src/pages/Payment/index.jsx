@@ -5,6 +5,7 @@ import bank from '~/assets/images/bank.png';
 import QR from '~/assets/images/7.png'
 
 const Payment = () => {
+  
   const number = 5000000;
   const formatNumber = () => {
     const formatter = new Intl.NumberFormat('vi-VN', {
